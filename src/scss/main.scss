@@ -1,0 +1,31 @@
+@import 'base';
+@import 'plugin';
+@import 'util';
+@import 'config';
+
+@import 'pages/*';
+
+body {
+	color: $black;
+	background-color: $white;
+	font-family: 'Raleway', Helvetica, sans-serif;
+}
+
+button {
+	width: 100%;
+	background-color: $blue;
+	border-radius: $border-radius;
+	padding: 12px;
+	font-size: 1.5em;
+	font-weight: bold;
+	text-align: center;
+}
+
+.box {
+	height: 100vh;
+	padding: 60px;
+	
+	> .row {
+		background-color: #672EE5;
+	}
+}
