@@ -58,7 +58,11 @@ module.exports = function(grunt) {
 		watch: { // Watch for file changes
 			css: {
 				files: ['src/scss/*.scss', 'src/scss/pages/*.scss'],
-				tasks: ['sass', 'concat', 'cssmin', 'clean']
+				tasks: ['sass', 'concat', 'cssmin', 'clean'],
+				options: {
+					atBegin: true,
+					interrupt: true
+				}
 			}
 		}
 	})
