@@ -11,7 +11,7 @@ export default class Landing extends React.Component {
 					<div className="col-9 col-offset-1">
 						<h1>Javier Mejia</h1>
 						<div className="line" />
-						<p className="title">Web Developer / Designer</p>
+						<p className="title">Web Developer <span>&#x0002F;&#x0002F;</span> Designer</p>
 					</div>
 					<div className="col-2">
 						<Link to="/gallery">Gallery</Link>
