@@ -19,11 +19,16 @@
 	.title {
 		font-size: 3.6em;
 		font-weight: 300;
+		
+		> span {
+			font-weight: 400;
+			letter-spacing: -.1em;
+		}
 	}
 	
 	h1, .title {
-		//background-color: $purple;
-		padding-right: 10px;
+		background-color: #fff;
+		padding: 4px 16px;
 		display: inline-block;
 	}
 	

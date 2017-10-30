@@ -9,7 +9,7 @@ import { StaticRouter, match, RouterContext } from 'react-router'
 import Error from './src/components/Error'
 import Routes from './src/components/Routes'
 
-var app = express()
+const app = express()
 
 app.use(express.static(path.resolve(__dirname, 'public')))
 
@@ -40,5 +40,5 @@ app.get('*', (req, res) => {
 app.listen(config.port, err => {
 	if (err) console.log(err)
 	
-	console.log('Server started on', '127.0.0.1:' + config.port)
+	console.log('Server started on 127.0.0.1:' + config.port)
 })
