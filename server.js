@@ -34,7 +34,7 @@ app.get('*', (req, res) => {
 		</StaticRouter>
 	)
 	
-	return res.render('template', { markup })
+	return res.render('template', { title: config.name, meta: config.seo, markup })
 })
 
 app.listen(config.port, err => {

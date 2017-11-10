@@ -43,9 +43,51 @@
 	.container {
 		height: 100%;
 		background-color: #f7f7f7;
-		background-image: url(/compiled/i/background.png);
-		background-position: center;
-		background-size: cover;
+		position: relative;
+		
+		.background {
+			width: 100%;
+			height: 100%;
+			background-image: url(/compiled/i/bkg.svg);
+			background-position: center;
+			background-size: cover;
+			position: absolute;
+			
+			.border {
+				position: absolute;
+				top: 45px;
+				right: 45px;
+				bottom: 45px;
+				left: 45px;
+				
+				$border-size: 8px;
+				$spacing: 20px;
+				
+				&:before, &:after {
+					content: '';
+					border-color: #000;
+					position: absolute;
+				}
+				
+				&:before {
+					border-top: $border-size solid;
+					border-bottom: $border-size solid;
+					left: $spacing;
+					right: $spacing;
+					top: 0;
+					bottom: 0;
+				}
+				
+				&:after {
+					border-left: $border-size solid;
+					border-right: $border-size solid;
+					top: $spacing;
+					bottom: $spacing;
+					left: 0;
+					right: 0;
+				}
+			}
+		}
 		
 		> .row {
 			height: 100%;

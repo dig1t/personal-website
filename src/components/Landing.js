@@ -6,7 +6,14 @@ export default class Landing extends React.Component {
 	renderComponent() {
 		return <div className="box landing">
 			<div className="overlay" />
-			<div class="container">
+			<div className="container">
+				<i className="background">
+					<i className="border">
+						<i className="cross" />
+						<i className="cross" />
+						<i className="overlapped-shape" />
+					</i>
+				</i>
 				<div className="row">
 					<div className="col-9 col-offset-1">
 						<h1>Javier Mejia</h1>
