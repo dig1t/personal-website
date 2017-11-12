@@ -28,37 +28,41 @@
 				position: absolute;
 				
 				&.shape-1 {
+					width: 46%; // acts as a max width
+					height: 40%; // acts as a max height
+					// doesnt distort because its svg and not an image
 					background-image: url(/compiled/i/shape-1.svg);
 					background-size: contain;
-					width: 450px;
-					height: 150px;
 					top: 0;
 					left: 0;
 				}
 				
 				&.shape-2 {
+					width: 46%;
+					height: 42%;
 					background-image: url(/compiled/i/shape-2.svg);
+					background-position-x: 100%;
 					background-size: contain;
-					width: 468px;
-					height: 326px;
 					top: 0;
 					right: 0;
 				}
 				
 				&.shape-3 {
+					width: 24%;
+					height: 43%;
 					background-image: url(/compiled/i/shape-3.svg);
+					background-position-y: 100%;
 					background-size: contain;
-					width: 240px;
-					height: 350px;
 					bottom: 0;
 					left: 0;
 				}
 				
 				&.shape-4 {
+					width: 28%;
+					height: 28%;
 					background-image: url(/compiled/i/shape-4.svg);
+					background-position: 50% 100%;
 					background-size: contain;
-					width: 350px;
-					height: 250px;
 					bottom: 20px;
 					right: 86px;
 				}
@@ -129,6 +133,11 @@
 					right: 0;
 				}
 			}
+		}
+		
+		ui.hamburger {
+			top: 100px;
+			left: 100px;
 		}
 		
 		.name {

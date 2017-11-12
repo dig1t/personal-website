@@ -1,12 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import Layout from './Layout'
+import Burger from './UI'
 
 export default class Landing extends React.Component {
-	toggleNav() {
-		console.log(123)
-	}
-	
 	renderComponent() {
 		return <div className="box landing">
 			<div className="overlay" />
@@ -25,7 +22,7 @@ export default class Landing extends React.Component {
 					</div>
 					<div className="i shape-4" />
 				</div>
-				<i className="nav-toggle hamburger" onClick={this.toggleNav} />
+				<Burger />
 				<div className="name">
 					<h1>Javier Mejia</h1>
 					<div className="wrap">
