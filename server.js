@@ -16,11 +16,7 @@ app.use(express.static(path.resolve(__dirname, 'public')))
 app.set('view engine', 'ejs')
 app.set('views', path.join(__dirname, 'views'))
 
-app.use(compression({
-	filter: (req, res) => {
-		return compression.filter(req, res)
-	}
-}))
+app.use(compression())
 
 app.get('*', (req, res) => {
 	res.setHeader('Content-Type', 'text/html; charset=utf-8')

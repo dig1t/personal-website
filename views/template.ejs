@@ -12,14 +12,9 @@
 	<meta name="theme-color" content="#000000">
 	
 	<!--
-	<script>require={baseUrl:"/static/js"};templatePath="/static/js"</script>
-	<script src="/static/js/query.js" async></script>
-	<script src="/static/js/require.js" data-main="app" async></script>
-	
-	<?php if (isset($this->config['_ga'])) {
+	if (isset($this->config['_ga'])) {
 	$domain = isset($this->config['domain']) ? $this->config['domain'] : 'auto'; ?>
 	<script>requireGA={_ga:'<?=$this->config["_ga"]?>',domain:'<?=$domain?>'};</script>
-	<?php } ?>
 	-->
 	
 	<!-- seo tags -->
@@ -38,19 +33,35 @@
 	<div id="root"><%- markup -%></div>
 	<script>
 	window.__INITIAL_STATE__ = {
-		users: [
+		designGallery: [
 			{
-				id: 'wpCSzGGjPIKjOXSjvWfIBb55',
+				name: 'project 1',
+				description: 'short description about project 1.',
+				thumbnail: '/compiled/i/gallery/design/project-1/thumb.jpg',
+				id: 'wpCSzGGjPIKjfsajvWfIBb55',
 				username: 'Digit'
 			},
 			{
-				id: '35CfzG4jP6KercSjvvvIBb16',
-				username: 'D1git'
+				name: 'project 2',
+				description: 'short description about project 2.',
+				thumbnail: '/compiled/i/gallery/design/project-2/thumb.jpg',
+				id: 'wpCSzGGjPIKjOXSjvWebrf55',
+				username: 'Digit'
 			},
 			{
-				id: 'wprt3454fgKjOXSjvWfIdfg5',
-				username: 'Dig1t'
-			}
+				name: 'project 3',
+				description: 'short description about project 3.',
+				thumbnail: '/compiled/i/gallery/design/project-3/thumb.jpg',
+				id: 'wpCSzGGjPIawfnSjvWfIBb55',
+				username: 'Digit'
+			},
+			{
+				name: 'project 4',
+				description: 'short description about project 4.',
+				thumbnail: '/compiled/i/gallery/design/project-4/thumb.jpg',
+				id: 'wpCSzGGjPIKjOXSjvWfIad55',
+				username: 'Digit'
+			},
 		]
 	}
 	</script>
