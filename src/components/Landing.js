@@ -5,24 +5,22 @@ import Burger from './UI'
 
 export default class Landing extends React.Component {
 	renderComponent() {
-		return <div className="box landing">
-			<div className="overlay" />
-			<div className="container">
-				<div className="background">
-					<div className="i pattern" />
-					<div className="i shape-1" />
-					<div className="i shape-2" />
-					<div className="i shape-3" />
-					<div className="border">
-						<div className="i cross t l" />
-						<div className="i cross t r" />
-						<div className="i cross b l" />
-						<div className="i cross b r" />
-						<div className="i overlapped-shape" />
-					</div>
-					<div className="i shape-4" />
+		return <section className="landing">
+			<div className="background">
+				<div className="i pattern" />
+				<div className="i shape-1" />
+				<div className="i shape-2" />
+				<div className="i shape-3" />
+				<div className="border">
+					<div className="i cross t l" />
+					<div className="i cross t r" />
+					<div className="i cross b l" />
+					<div className="i cross b r" />
+					<div className="i overlapped-shape" />
 				</div>
-				<Burger />
+				<div className="i shape-4" />
+			</div>
+			<div className="align-wrap">
 				<div className="name">
 					<h1>Javier Mejia</h1>
 					<div className="wrap">
@@ -31,17 +29,15 @@ export default class Landing extends React.Component {
 					<div className="title">Web Developer</div>
 					<div className="title">Graphic Designer</div>
 				</div>
-				<div className="row">
-					<div className="col-2">
-						<Link to="/gallery">Gallery</Link>
-						<span className="chevron-right"></span>
-					</div>
+				<div className="nav-btn">
+					<Link to="/gallery">Gallery</Link>
+					<span className="fa fa-chevron-right"></span>
 				</div>
 			</div>
-		</div>;
+		</section>;
 	}
 	
 	render() {
-		return <Layout>{this.renderComponent()}</Layout>;
+		return <Layout page={this.props.location.pathname}>{this.renderComponent()}</Layout>;
 	}
 }

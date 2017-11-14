@@ -3,7 +3,8 @@
 @import 'util';
 @import 'config';
 
-@import 'pages/*';
+@import 'pages/landing';
+@import 'pages/contact';
 
 body {
 	color: $black;
@@ -21,11 +22,65 @@ button {
 	text-align: center;
 }
 
-.box {
+main {
 	height: 100vh;
 	padding: 60px;
 	
-	> .row {
+	.content {
+		height: calc(100% - 60px);
 		background-color: $gray;
+		
+		> section {
+			height: 100%;
+			position: relative;
+		}
 	}
+}
+
+nav {
+	height: 60px;
+	margin: 0 10px;
+	line-height: 60px;
+	
+	.logo {
+		display: inline-block;
+		vertical-align: middle;
+	}
+	
+	ul {
+		font-size: 1.3em;
+		float: right;
+		
+		li {
+			display: inline-block;
+			
+			&:not(:last-child) {
+				margin-right: 10px;
+			}
+			
+			&.active a {
+				color: $orange;
+				cursor: default;
+			}
+			
+			&:hover:not(.active) a {
+				color: #fff;
+				background-color: $black;
+			}
+			
+			a {
+				color: $black;
+				padding: 10px;
+				font-weight: 700;
+				text-transform: uppercase;
+				letter-spacing: .08em;
+			}
+		}
+	}
+}
+
+.align-wrap {
+	height: 100%;
+	display: flex;
+	align-items: center;
 }

@@ -3,9 +3,9 @@ import Navigation from './Navigation'
 
 export default class Layout extends React.Component {
 	render() {
-		return [
-			<Navigation />,
-			<main>{this.props.children}</main>
-		]
+		return <main>
+			<Navigation page={this.props.page} />
+			<div className="content">{this.props.children}</div>
+		</main>;
 	}
 }
