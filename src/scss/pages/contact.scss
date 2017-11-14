@@ -1,0 +1,17 @@
+@import '../config';
+
+.contact {
+	@include gradient(#4a3380, #61ddf2);
+	
+	input, textarea {
+		margin-bottom: 30px;
+		border: 0;
+		border-radius: 0;
+		padding: 15px;
+	}
+	
+	h2 {
+		margin-bottom: 15px;
+		margin-left: 20px;
+	}
+}

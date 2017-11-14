@@ -1,10 +1,10 @@
 import React from 'react'
 import Layout from './Layout'
 
-export default class Gallery extends React.Component {
+export default class Portfolio extends React.Component {
 	renderComponent() {
-		return <section className="gallery">
-			<h1>gallery</h1>
+		return <section className="portfolio">
+			<h1>folio</h1>
 		</section>;
 	}
 	

@@ -1,9 +1,6 @@
 @import '../config';
 
 .landing {
-	position: relative;
-	overflow: hidden;
-	
 	a[href="/gallery"] {
 		color: $black;
 		font-size: 1.4em;
@@ -12,173 +9,191 @@
 		letter-spacing: .1em;
 	}
 	
-	.container {
+	.background {
+		width: 100%;
 		height: 100%;
-		background-color: #f7f7f7;
-		position: relative;
-		overflow: hidden;
+		position: absolute;
 		
-		.background {
-			width: 100%;
-			height: 100%;
+		.i {
+			background-repeat: no-repeat;
 			position: absolute;
 			
-			.i {
-				background-repeat: no-repeat;
-				position: absolute;
-				
-				&.shape-1 {
-					width: 46%; // acts as a max width
-					height: 40%; // acts as a max height
-					// doesnt distort because its svg and not an image
-					background-image: url(/compiled/i/shape-1.svg);
-					background-size: contain;
-					top: 0;
-					left: 0;
-				}
-				
-				&.shape-2 {
-					width: 46%;
-					height: 42%;
-					background-image: url(/compiled/i/shape-2.svg);
-					background-position-x: 100%;
-					background-size: contain;
-					top: 0;
-					right: 0;
-				}
-				
-				&.shape-3 {
-					width: 24%;
-					height: 43%;
-					background-image: url(/compiled/i/shape-3.svg);
-					background-position-y: 100%;
-					background-size: contain;
-					bottom: 0;
-					left: 0;
-				}
-				
-				&.shape-4 {
-					width: 28%;
-					height: 28%;
-					background-image: url(/compiled/i/shape-4.svg);
-					background-position: 50% 100%;
-					background-size: contain;
-					bottom: 20px;
-					right: 86px;
-				}
-				
-				&.pattern {
-					background-image: url(/compiled/i/pattern.svg);
-					background-repeat: repeat;
-					position: absolute;
-					top: 45px;
-					right: 45px;
-					bottom: 45px;
-					left: 45px;
-				}
-				
-				&.cross {
-					background-image: url(/compiled/i/cross.svg);
-					width: 24px;
-					height: 24px;
-					
-					&.t {
-						top: -8px;
-					}
-					
-					&.b {
-						bottom: -8px;
-					}
-					
-					&.l {
-						left: -8px;
-					}
-					
-					&.r {
-						right: -8px;
-					}
-				}
+			&.shape-1 {
+				width: 48%; // acts as a max width
+				height: 24%; // acts as a max height
+				// maintains aspect ratio because its svg and not an image
+				background-image: url(/compiled/i/shape-1.svg);
+				background-size: contain;
+				top: 0;
+				left: 0;
 			}
 			
-			.border {
+			&.shape-2 {
+				width: 46%;
+				height: 42%;
+				background-image: url(/compiled/i/shape-2.svg);
+				background-position-x: 100%;
+				background-size: contain;
+				top: 0;
+				right: 0;
+			}
+			
+			&.shape-3 {
+				width: 24%;
+				height: 43%;
+				background-image: url(/compiled/i/shape-3.svg);
+				background-position-y: 100%;
+				background-size: contain;
+				bottom: 0;
+				left: 0;
+			}
+			
+			&.shape-4 {
+				width: 28%;
+				height: 28%;
+				background-image: url(/compiled/i/shape-4.svg);
+				background-position: 50% 100%;
+				background-size: contain;
+				bottom: 20px;
+				right: 86px;
+			}
+			
+			&.pattern {
+				background-image: url(/compiled/i/pattern.svg);
+				background-repeat: repeat;
 				position: absolute;
-				top: 45px;
-				right: 45px;
-				bottom: 45px;
-				left: 45px;
+				top: 53px;
+				right: 53px;
+				bottom: 53px;
+				left: 53px;
+			}
+			
+			&.cross {
+				background-image: url(/compiled/i/cross.svg);
+				width: 24px;
+				height: 24px;
 				
-				$border-size: 8px;
-				
-				&:before, &:after {
-					content: '';
-					border-color: #000;
-					position: absolute;
+				&.t {
+					top: -8px;
 				}
 				
-				&:before {
-					border-top: $border-size solid;
-					border-bottom: $border-size solid;
-					left: $border-size * 3;
-					right: $border-size * 3;
-					top: 0;
-					bottom: 0;
+				&.b {
+					bottom: -8px;
 				}
 				
-				&:after {
-					border-left: $border-size solid;
-					border-right: $border-size solid;
-					top: $border-size * 3;
-					bottom: $border-size * 3;
-					left: 0;
-					right: 0;
+				&.l {
+					left: -8px;
+				}
+				
+				&.r {
+					right: -8px;
 				}
 			}
 		}
 		
-		ui.hamburger {
-			top: 100px;
-			left: 100px;
-		}
-		
-		.name {
+		.border {
 			position: absolute;
-			top: 50%;
+			top: 45px;
+			right: 45px;
+			bottom: 45px;
 			left: 45px;
 			
-			& > * {
-				background-color: #fff;
-				padding: 4px 16px;
-				display: table;
+			$border-size: 8px;
+			
+			&:before, &:after {
+				content: '';
+				border-color: #000;
+				position: absolute;
 			}
 			
-			.wrap {
-				margin: -8px 0;
-				padding: 0px 16px;
-				
-				.line {
-					background-color: $orange;
-					width: 40px;
-					height: 4px;
-					margin: 12px 0 14px;
-				}
+			&:before {
+				border-top: $border-size solid;
+				border-bottom: $border-size solid;
+				left: $border-size * 3;
+				right: $border-size * 3;
+				top: 0;
+				bottom: 0;
 			}
 			
-			h1 {
-				font-size: 6em;
-				font-weight: 900;
+			&:after {
+				border-left: $border-size solid;
+				border-right: $border-size solid;
+				top: $border-size * 3;
+				bottom: $border-size * 3;
+				left: 0;
+				right: 0;
 			}
+		}
+	}
+	
+	ui.hamburger {
+		background-color: #fff;
+		border-radius: 100%;
+		position: absolute;
+		top: 80px;
+		left: 80px;
+		transition: transform .2s ease-in-out;
+		
+		&:hover {
+			background-color: darken(#fff, 10%);
+			box-shadow: 2px 2px 4px rgba(0, 0, 0, .2);
+		}
+	}
+	
+	.name {
+		position: absolute;
+		left: 45px;
+		
+		& > * {
+			background-color: #fff;
+			padding: 4px 16px;
+			display: table;
+		}
+		
+		.wrap {
+			margin: -8px 0;
+			padding: 0px 16px;
 			
-			.title {
-				margin: -8px 0;
-				font-size: 3.6em;
-				font-weight: 300;
+			.line {
+				background-color: $orange;
+				width: 40px;
+				height: 4px;
+				margin: 12px 0 14px;
 			}
 		}
 		
-		> .row {
-			height: 100%;
-			display: flex;
-			align-items: center;
+		h1 {
+			font-size: 6em;
+			font-weight: 900;
 		}
+		
+		.title {
+			margin: -8px 0;
+			font-size: 2.8em;
+			font-weight: 300;
+		}
+	}
+	
+	.nav-btn {
+		position: absolute;
+		right: 66px;
+		
+		a {
+			margin-right: 10px;
+		}
+		
+		.fa {
+			font-size: 4em;
+		}
+		
+		& > * {
+			vertical-align: middle;
+		}
+	}
+	
+	> .row {
+		height: 100%;
+		display: flex;
+		align-items: center;
 	}
 }

@@ -26,8 +26,11 @@
 ui.hamburger {
 	width: 50px;
 	height: 50px;
-	position: relative;
 	cursor: pointer;
+	
+	$burger-width: 20px;
+	$burger-height: 2px;
+	$burger-spacing: 6px;
 	
 	&.active {
 		i {
@@ -57,21 +60,22 @@ ui.hamburger {
 	}
 	
 	i {
-		margin: calc((100% - 2px) / 2) calc((100% - 24px) / 2);
+		margin: calc((100% - 2px) / 2) calc((100% - #{$burger-width}) / 2);
+		position: relative;
 		
 		&:before {
-			top: -8px;
+			top: -$burger-spacing;
 		}
 		
 		&:after {
-			top: 8px;
+			top: $burger-spacing;
 		}
 		
 		&, &:before, &:after {
 			content: '';
 			background-color: $black;
-			width: 24px;
-			height: 2px;
+			width: $burger-width;
+			height: $burger-height;
 			border-radius: 3px;
 			transition: transform .2s ease-in-out;
 			display: block;
