@@ -30,7 +30,7 @@ export default class Landing extends React.Component {
 					<div className="title">Graphic Designer</div>
 				</div>
 				<div className="nav-btn">
-					<Link to="/gallery">Gallery</Link>
+					<Link to="/portfolio">Portfolio</Link>
 					<span className="fa fa-chevron-right"></span>
 				</div>
 			</div>

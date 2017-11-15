@@ -4,6 +4,7 @@
 @import 'config';
 
 @import 'pages/landing';
+@import 'pages/portfolio';
 @import 'pages/contact';
 
 body {
@@ -31,8 +32,11 @@ main {
 		background-color: $gray;
 		
 		> section {
-			height: 100%;
 			position: relative;
+			
+			&, > .row {
+				height: 100%;
+			}
 		}
 	}
 }
