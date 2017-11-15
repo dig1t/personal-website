@@ -3,15 +3,25 @@
 .contact {
 	@include gradient(#4a3380, #61ddf2);
 	
-	input, textarea {
-		margin-bottom: 30px;
+	input, textarea, button {
+		background-color: #fff;
 		border: 0;
 		border-radius: 0;
-		padding: 15px;
+		box-shadow: 0px 1px 1px rgba(0, 0, 0, .2);
+		
+		&:not(button) {
+			margin-bottom: 30px;
+			padding: 15px;
+			font-weight: 600;
+		}
+	}
+	
+	textarea {
+		min-height: 200px;
 	}
 	
 	h2 {
 		margin-bottom: 15px;
-		margin-left: 20px;
+		margin-left: 15px;
 	}
 }

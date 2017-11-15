@@ -33,6 +33,10 @@ app.get('*', (req, res) => {
 	return res.render('template', { title: config.name, meta: config.seo, markup })
 })
 
+app.post('/api/contact', (req, res) => {
+	
+})
+
 app.listen(config.port, err => {
 	if (err) console.log(err)
 	

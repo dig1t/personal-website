@@ -15,7 +15,7 @@ module.exports = function(grunt) {
 						'admin.scss',
 						'main.scss'
 					],
-					dest: 'public/compiled/css',
+					dest: 'public/compiled',
 					ext: '.css'
 				}]
 			}
@@ -24,10 +24,10 @@ module.exports = function(grunt) {
 		concat: { // Concatenate required css files with compiled sass file
 			dist: {
 				src: [
-					'public/compiled/css/main.css',
+					'public/compiled/main.css',
 					'src/scss/*.css'
 				],
-				dest: 'public/compiled/css/build.css'
+				dest: 'public/compiled/build.css'
 			}
 		},
 		
@@ -35,12 +35,12 @@ module.exports = function(grunt) {
 			dist: {
 				files: [{
 					expand: true,
-					cwd: 'public/compiled/css',
+					cwd: 'public/compiled',
 					src: [
 						'admin.css',
 						'build.css'
 					],
-					dest: 'public/compiled/css',
+					dest: 'public/compiled',
 					ext: '.min.css'
 				}]
 			}
@@ -49,8 +49,8 @@ module.exports = function(grunt) {
 		clean: { // Remove uncompressed files
 			dist: {
 				src: [
-					'public/compiled/css/*.css',
-					'!public/compiled/css/*.min.css'
+					'public/compiled/*.css',
+					'!public/compiled/*.min.css'
 				]
 			}
 		},
