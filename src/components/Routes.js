@@ -8,15 +8,15 @@ import Gallery from './Gallery'
 import Contact from './Contact'
 import Error from './Error'
 
-export default class Routes extends React.Component {
-	render() {
-		return <Switch>
-			<Route exact path="/" component={Landing} />
-			<Route exact path="/portfolio" component={Portfolio} />
-			<Route exact path="/store" component={Store} />
-			<Route exact path="/gallery" component={Gallery} />
-			<Route exact path="/contact" component={Contact} />
-			<Route component={Error} />
-		</Switch>;
-	}
-}
+const Routes = () => (
+	<Switch>
+		<Route exact path="/" component={Landing} />
+		<Route exact path="/portfolio" component={Portfolio} />
+		<Route exact path="/store" component={Store} />
+		<Route exact path="/gallery" component={Gallery} />
+		<Route exact path="/contact" component={Contact} />
+		<Route component={Error} />
+	</Switch>
+)
+
+export default Routes

@@ -29,7 +29,7 @@ app.get('*', (req, res) => {
 			<Routes />
 		</StaticRouter>
 	)
-	
+	console.log(context)
 	return res.render('template', { title: config.name, meta: config.seo, markup })
 })
 
