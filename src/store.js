@@ -16,5 +16,6 @@ const logger = store => next => action => {
 
 export default createStore(
 	reducers,
+	window.__INITIAL_STATE__,
 	applyMiddleware(logger)
 )

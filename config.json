@@ -1,9 +1,9 @@
 {
 	"port": 8000,
-	"name": "Javier Mejia",
+	"name": "title",
 	"seo": {
-		"title": "Javier Mejia",
-		"description": "Web Developer // Graphic Designer"
+		"title": "title",
+		"description": "desc"
 	},
 	"sql": {
 		"type": "mysql",
