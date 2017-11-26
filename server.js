@@ -1,13 +1,12 @@
-const express = require('express')
-const compression = require('compression')
-const path = require('path')
-const config = require('./config.json')
-
 import React from 'react'
 import ReactDOMServer from 'react-dom/server'
 import { StaticRouter, match, RouterContext } from 'react-router'
 import Error from './src/components/Error'
 import Routes from './src/components/Routes'
+import express from 'express'
+import compression from 'compression'
+import path from 'path'
+import config from './config.json'
 
 const app = express()
 
@@ -29,8 +28,10 @@ app.get('*', (req, res) => {
 			<Routes />
 		</StaticRouter>
 	)
+	
 	console.log(context)
-	return res.render('template', { title: config.name, meta: config.seo, markup })
+	
+	return res.render('template', {title: config.name, meta: config.seo, markup})
 })
 
 app.post('/api/contact', (req, res) => {
