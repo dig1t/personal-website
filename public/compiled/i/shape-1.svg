@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="300px" height="100px" viewBox="0 0 300 100">
-	<linearGradient id="gradient" gradientUnits="userSpaceOnUse" x1="152.2151" y1="92.2631" x2="146.9761" y2="-7.7027">
-		<stop offset="0" style="stop-color:#640070"/>
-		<stop offset="1" style="stop-color:#D10059"/>
-	</linearGradient>
-	<path fill="url(#gradient)" d="M0,0v100c34.4,0.4,68.4-14.1,97.4-32c14.5-9,28.5-19.1,44.8-24.7c9.3-3.2,18.1-6.6,46.4-1
-		c15.7,3.1,38.3,16.8,60.5,12.5C274.3,50,288,37.3,300,0H0z"/>
-</svg>
