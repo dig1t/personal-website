@@ -5,22 +5,28 @@ main .content > section.landing {
 
 .landing {
 	.background {
-		background-image: url(/compiled/i/hero-img.jpeg);
-		background-size: cover;
-		background-position: center;
-		filter: blur(1.5px);
-	}
-	
-	.overlay {
-		background-image: linear-gradient(rgba(0,0,0,0.4) 0%,rgba(0,0,0,.6) 75%,rgba(0,0,0,.8) 100%);
-	}
-	
-	.background, .overlay {
 		width: 115%;
 		height: 115%;
 		margin-top: -7.5%;
 		margin-left: -7.5%;
 		position: absolute;
+		
+		&.hero {
+			background-image: url(/compiled/i/hero-img.jpeg);
+			background-size: cover;
+			background-position: center;
+			filter: blur(1.5px);
+		}
+		
+		&.overlay {
+			background-image: linear-gradient(rgba(0,0,0,0.4) 0%,rgba(0,0,0,.6) 75%,rgba(0,0,0,.8) 100%);
+		}
+		
+		&.broken-pattern {
+			background-image: url(/compiled/i/broken-pattern.svg);
+			background-size: contain;
+			width: 57.5%;
+		}
 	}
 	
 	.align-wrap {
@@ -42,61 +48,60 @@ main .content > section.landing {
 	}
 	
 	.name {
-		& > * {
-			background-color: #fff;
-			padding: 10px 16px;
-			display: table;
-		}
-		
-		.wrap {
-			margin-top: -10px;
-			padding: 0 16px;
-			
-			.line {
-				background-color: $orange;
-				width: 50px;
-				height: 6px;
-				margin: 12px 0 14px;
-			}
-		}
-		
 		h1 {
 			padding: 10px 16px;
 			font-size: 6em;
 			font-weight: 900;
+			line-height: .85em;
 		}
 		
 		.title {
-			font-size: 2.8em;
-			font-weight: 300;
+			color: #fff;
+			font-size: 3.3em;
+			font-style: italic;
+			font-weight: 200;
+			line-height: 1.2em;
 			
-			&.one {
-				margin-top: -10px;
-			}
-			
-			&.two {
-				margin-top: -16px;
+			> * {
+				background-color: $orange;
+				padding: 10px 16px;
+				display: table;
+				
+				&:nth-child(2) {
+					margin-top: -10px;
+				}
 			}
 		}
 	}
 	
 	.nav-btn {
-		float: right;
+		background-color: #fff;
+		padding: 12px;
+		position: relative;
+		display: block;
 		
-		a {
-			margin-right: 10px;
-			font-size: 1.4em;
-			font-weight: 900;
-			text-transform: uppercase;
-			letter-spacing: .1em;
+		&:before {
+			content: '';
+			background-image: url(/compiled/i/chevron-right.svg);
+			background-position: center;
+			background-repeat: no-repeat;
+			width: 24px;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			right: 8px;
 		}
 		
-		.fa {
-			font-size: 4em;
+		span {
+			margin-right: 20px;
+			font-size: 1.6em;
+			font-weight: 900;
+			text-transform: uppercase;
+			letter-spacing: .02em;
 		}
 		
 		& > * {
-			color: $white;
+			color: $black;
 			vertical-align: middle;
 		}
 	}

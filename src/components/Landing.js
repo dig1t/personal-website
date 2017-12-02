@@ -6,22 +6,24 @@ import Burger from './UI'
 export default class Landing extends React.Component {
 	renderComponent() {
 		return <section className="landing">
-			<div className="background" />
-			<div className="overlay" />
+			<div className="background hero" />
+			<div className="background overlay" />
+			<div className="background broken-pattern" />
 			<div className="row align-wrap">
 				<div className="col-5 col-offset-1 name">
-					<h1>Javier Mejia</h1>
-					<div className="wrap">
-						<div className="line" />
+					<h1>
+						<div>Javier</div>
+						<div>Mejia</div>
+					</h1>
+					<div className="title">
+						<div>Web Developer</div>
+						<div>Graphic Designer</div>
 					</div>
-					<div className="title one">Web Developer</div>
-					<div className="title two">Graphic Designer</div>
 				</div>
-				<div className="col-5">
-					<div className="nav-btn">
-						<Link to="/portfolio">View my Portfolio</Link>
-						<span className="fa fa-chevron-right"></span>
-					</div>
+				<div className="col-2 col-offset-4">
+					<Link to="/portfolio" className="nav-btn">
+						<span>View Portfolio</span>
+					</Link>
 				</div>
 			</div>
 		</section>;
