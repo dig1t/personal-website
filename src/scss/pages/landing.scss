@@ -3,35 +3,36 @@ main .content > section.landing {
 	overflow: hidden;
 }
 
-.landing {
-	.background {
-		width: 115%;
-		height: 115%;
-		margin-top: -7.5%;
-		margin-left: -7.5%;
-		position: absolute;
-		
-		&.hero {
-			background-image: url(/compiled/i/hero-img.jpeg);
-			background-size: cover;
-			background-position: center;
-			filter: blur(1.5px);
-		}
-		
-		&.overlay {
-			background-image: linear-gradient(rgba(0,0,0,0.4) 0%,rgba(0,0,0,.6) 75%,rgba(0,0,0,.8) 100%);
-		}
-		
-		&.broken-pattern {
-			background-image: url(/compiled/i/broken-pattern.svg);
-			background-size: contain;
-			width: 57.5%;
-		}
+.landing + .background {
+	width: 115%;
+	height: 115%;
+	margin-top: -7.5%;
+	margin-left: -7.5%;
+	position: absolute;
+	
+	.hero {
+		background-image: url(/compiled/i/hero-img.jpeg);
+		background-size: cover;
+		background-position: center;
+		filter: blur(1.5px);
 	}
 	
-	.align-wrap {
-		width: 100%;
+	.overlay {
+		background-image: linear-gradient(rgba(0,0,0,0.4) 0%,rgba(0,0,0,.6) 75%,rgba(0,0,0,.8) 100%);
 	}
+	
+	.broken-pattern {
+		background-image: url(/compiled/i/broken-pattern.svg);
+		background-size: contain;
+		width: 57.5%;
+	}
+}
+
+.landing {
+	width: 1200px;
+	height: 100%;
+	position: absolute;
+	left: calc(50% - 600px);
 	
 	ui.hamburger {
 		background-color: #fff;
@@ -47,20 +48,28 @@ main .content > section.landing {
 		}
 	}
 	
+	> .row {
+		background: url(http://griddle.it/1200-12-30) repeat-y center top;
+		width: 1200px;
+		left: calc(50% - 600px);
+	}
+	
 	.name {
 		h1 {
 			padding: 10px 16px;
-			font-size: 6em;
+			font-size: 8em;
 			font-weight: 900;
 			line-height: .85em;
 		}
 		
 		.title {
 			color: #fff;
-			font-size: 3.3em;
+			font-size: 3.5em;
 			font-style: italic;
 			font-weight: 200;
 			line-height: 1.2em;
+			position: relative;
+			z-index: 2;
 			
 			> * {
 				background-color: $orange;
@@ -76,9 +85,15 @@ main .content > section.landing {
 	
 	.nav-btn {
 		background-color: #fff;
-		padding: 12px;
+		padding: 15px;
+		padding-right: 35px;
 		position: relative;
 		display: block;
+		font-size: 1.6em;
+		font-weight: 900;
+		text-transform: uppercase;
+		letter-spacing: .02em;
+		line-height: 1.1em;
 		
 		&:before {
 			content: '';
@@ -90,14 +105,6 @@ main .content > section.landing {
 			top: 0;
 			bottom: 0;
 			right: 8px;
-		}
-		
-		span {
-			margin-right: 20px;
-			font-size: 1.6em;
-			font-weight: 900;
-			text-transform: uppercase;
-			letter-spacing: .02em;
 		}
 		
 		& > * {
