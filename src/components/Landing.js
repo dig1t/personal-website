@@ -5,7 +5,7 @@ import Burger from './UI'
 
 export default class Landing extends React.Component {
 	renderComponent() {
-		return <>
+		return <React.Fragment>
 			<section className="landing">
 				<div className="row align-wrap">
 					<div className="col-10 name">
@@ -28,7 +28,7 @@ export default class Landing extends React.Component {
 				<div className="overlay" />
 				<div className="broken-pattern" />
 			</div>
-		</>;
+		</React.Fragment>;
 	}
 	
 	render() {
