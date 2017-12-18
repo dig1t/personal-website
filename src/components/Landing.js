@@ -7,8 +7,9 @@ export default class Landing extends React.Component {
 	renderComponent() {
 		return <React.Fragment>
 			<section className="landing">
+				<div className="stripes" />
 				<div className="row align-wrap">
-					<div className="col-10 name">
+					<div className="col-6 name">
 						<h1>
 							<div>Javier</div>
 							<div>Mejia</div>
@@ -18,7 +19,7 @@ export default class Landing extends React.Component {
 							<div>Graphic Designer</div>
 						</div>
 					</div>
-					<div className="col-2">
+					<div className="col-2 col-offset-4">
 						<Link to="/portfolio" className="nav-btn">View Portfolio</Link>
 					</div>
 				</div>
