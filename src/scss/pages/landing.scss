@@ -3,7 +3,7 @@ main .content > section.landing {
 	overflow: hidden;
 }
 
-.landing + .background {
+.landing .background {
 	width: 115%;
 	height: 115%;
 	margin-top: -7.5%;
@@ -24,12 +24,17 @@ main .content > section.landing {
 	}
 	
 	.overlay {
-		background-image: linear-gradient(rgba(0,0,0,0.4) 0%,rgba(0,0,0,.6) 75%,rgba(0,0,0,.8) 100%);
+		background-image: linear-gradient(
+			rgba(0, 0, 0, .4) 0%,
+			rgba(0, 0, 0, .6) 75%,
+			rgba(0, 0, 0, .8) 100%
+		)
 	}
 	
 	.broken-pattern {
 		background-image: url(/compiled/i/broken-pattern.svg);
-		background-size: contain;
+		background-position-x: 100%;
+		background-size: 100%;
 		width: 57.5%;
 	}
 }
@@ -57,8 +62,6 @@ main .content > section.landing {
 	}
 	
 	.stripes {
-		width: percentage(4 / 12);
-		max-width: 450px;
 		height: 40%;
 		background: repeating-linear-gradient(
 			-45deg,
@@ -67,6 +70,7 @@ main .content > section.landing {
 			transparent 15px,
 			transparent 45px
 		);
+		padding-right: 25%;
 		position: absolute;
 		left: calc(10% - 15px);
 		top: calc(50% - 20%);
@@ -79,7 +83,7 @@ main .content > section.landing {
 		
 		h1 {
 			padding: 10px 16px;
-			font-size: 10.2em;
+			font-size: 8em;
 			font-weight: 900;
 			line-height: .85em;
 		}
@@ -106,32 +110,50 @@ main .content > section.landing {
 	}
 	
 	.nav-btn {
-		background-color: #fff;
-		padding: 15px;
-		padding-right: 35px;
+		$nav-btn-size: 150px;
+		
 		position: relative;
-		display: block;
-		font-size: 1.6em;
-		font-weight: 900;
-		text-transform: uppercase;
-		letter-spacing: .02em;
-		line-height: 1.1em;
+		
+		a {
+			color: $black;
+			background-color: #fff;
+			width: $nav-btn-size;
+			padding: 15px;
+			padding-right: 35px;
+			position: relative;
+			font-size: 1.6em;
+			font-weight: 900;
+			text-transform: uppercase;
+			letter-spacing: $letter-spacing;
+			line-height: 1.1em;
+			z-index: 2;
+			
+			&:after {
+				content: '';
+				background-image: url(/compiled/i/chevron-right.svg);
+				background-position: center;
+				background-repeat: no-repeat;
+				width: 24px;
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				right: 8px;
+			}
+		}
 		
 		&:before {
 			content: '';
-			background-image: url(/compiled/i/chevron-right.svg);
-			background-position: center;
-			background-repeat: no-repeat;
-			width: 24px;
+			width: $nav-btn-size;
+			height: 100%;
+			border: 4px solid $orange;
 			position: absolute;
-			top: 0;
-			bottom: 0;
-			right: 8px;
+			top: -12px;
+			right: 33px;
+			z-index: 1;
 		}
 		
-		& > * {
-			color: $black;
-			vertical-align: middle;
+		a, &:before {
+			float: right;
 		}
 	}
 }

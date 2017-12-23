@@ -12,6 +12,12 @@
 	background: url(http://griddle.it/1200-12-30) repeat-y center top;
 }
 
+section.align-wrap > h3 {
+	margin: auto;
+}
+
+//
+
 body {
 	color: $black;
 	background-color: $white;
@@ -61,7 +67,7 @@ nav {
 	}
 	
 	ul {
-		font-size: 1.3em;
+		font-size: 1.1em;
 		float: right;
 		
 		li {
@@ -83,9 +89,8 @@ nav {
 			
 			a {
 				color: $black;
-				padding: 10px;
-				font-weight: 900;
-				text-transform: uppercase;
+				padding: 8px 10px;
+				font-weight: 700;
 				letter-spacing: .08em;
 			}
 		}
