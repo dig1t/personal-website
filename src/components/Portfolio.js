@@ -39,13 +39,19 @@ export default class Portfolio extends React.Component {
 		}
 	}
 	
-	renderComponent() {
+	renderComponentMain() {
 		return <section className="portfolio">
 			{this.state.portfolio.map((project) => {
 				return <div className="project">
 					<img src={project.thumbnail} />
 				</div>
 			})}
+		</section>;
+	}
+	
+	renderComponent() {
+		return <section className="portfolio align-wrap">
+			<h3>Coming Soon</h3>
 		</section>;
 	}
 	

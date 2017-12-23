@@ -1,0 +1,10 @@
+{
+	"name": "JavierM",
+	"short_name": "JavierM",
+	"description": "Javier M, Web Developer and Graphic Designer",
+	"start_url": "/",
+	"display": "standalone",
+	"orientation": "portrait",
+	"theme_color": "#e5bd17",
+	"background_color": "#ffffff"
+}

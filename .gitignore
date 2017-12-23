@@ -16,5 +16,6 @@ node_modules/
 
 # Compiled
 public/compiled/*
+!public/compiled/manifest.json
 !public/compiled/fonts/*
 !public/compiled/i/*
