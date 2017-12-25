@@ -47,7 +47,7 @@ export default class Portfolio extends React.Component {
 		return <section className="portfolio">
 			<div className="hero align-wrap">
 				<div className="headings">
-					<h2>Portfolio</h2>
+					<h1>Portfolio</h1>
 					<p>Here is a list of projects I have worked on.</p>
 				</div>
 			</div>
