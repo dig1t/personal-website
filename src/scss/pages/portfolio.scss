@@ -1,20 +1,28 @@
 .portfolio {
-	margin-bottom: -20px;
-	column-count: 2;
-	column-gap: 20px;
-	
-	/* // adjust grid gutter
-	> .row {
-		margin-left: -5px;
-		margin-right: -5px;
-		
-		> * {
-			padding-left: 5px;
-			padding-right: 5px;
-		}
-	}*/
+	$spacing: 20px;
 	
 	img {
 		width: 100%;
+	}
+	
+	.hero {
+		background: url(/assets/i/portfolio-hero.jpeg) center/cover;
+		height: 20vh;
+		margin-bottom: $spacing;
+		
+		.headings {
+			color: $white;
+			margin-left: 60px;
+		}
+	}
+	
+	.projects-grid {
+		margin-bottom: -$spacing; // hide last item's margin
+		column-count: 3;
+		column-gap: $spacing;
+		
+		.project {
+			margin-bottom: $spacing;
+		}
 	}
 }

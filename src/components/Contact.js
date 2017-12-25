@@ -1,3 +1,4 @@
+import axios from 'axios'
 import React from 'react'
 import Layout from './Layout'
 
@@ -20,10 +21,12 @@ export default class Contact extends React.Component {
 	constructor(props) {
 		super(props)
 		this.state = {
-			name: '',
-			email: '',
-			subject: '',
-			message: ''
+			form: {
+				_subject: '',
+				name: '',
+				email: '',
+				message: ''
+			}
 		}
 		
 		this.handleInputChange = this.handleInputChange.bind(this)
@@ -34,7 +37,10 @@ export default class Contact extends React.Component {
 		const target = event.target
 		
 		this.setState({
-			[target.name]: target.type === 'checkbox' ? target.checked : target.value
+			form: {
+				...this.state.form,
+				[target.name]: target.type === 'checkbox' ? target.checked : target.value
+			}
 		})
 	}
 	
@@ -43,25 +49,36 @@ export default class Contact extends React.Component {
 		const data = new FormData(event.target)
 		
 		console.log(this.state)
+		
+		axios.post('https://formspree.io/contact@javierm.net', this.state.form, {
+				headers: {'Content-Type': 'application/json'}
+			})
+		  .then((response) => {
+		    console.log('saved successfully', response)
+		  })
+			.catch((error) => {
+				console.log(error)
+			});
 	}
 	
-	renderComponent() {
+	component() {
 		return <section className="contact">
 			<div className="row-ng align-wrap">
 				<div className="col-6-ng">
 					<form onSubmit={this.handleSubmit}>
+						<input type="text" name="_gotcha" style={{display: 'none'}} />
 						<div className="col-8-ng col-offset-2 row">
 							<div className="heading col-12-ng">
 								<h2>CONTACT ME</h2>
 							</div>
 							<div className="col-12-ng">
-								<input placeholder="Name" name="name" value={this.state.name} onChange={this.handleInputChange} />
+								<input type="text" placeholder="Name" name="name" value={this.state.name} onChange={this.handleInputChange} />
 							</div>
 							<div className="col-12-ng">
-								<input placeholder="Email" name="email" value={this.state.email} onChange={this.handleInputChange} />
+								<input type="email" placeholder="Email" name="email" value={this.state.email} onChange={this.handleInputChange} />
 							</div>
 							<div className="col-12-ng">
-								<input placeholder="Subject" name="subject" value={this.state.subject} onChange={this.handleInputChange} />
+								<input type="text" placeholder="Subject" name="_subject" value={this.state.subject} onChange={this.handleInputChange} />
 							</div>
 							<div className="col-12-ng">
 								<textarea placeholder="Message" name="message" value={this.state.message} onChange={this.handleInputChange} />
@@ -87,6 +104,6 @@ export default class Contact extends React.Component {
 	}
 	
 	render() {
-		return <Layout page={this.props.location.pathname}>{this.renderComponent()}</Layout>;
+		return <Layout page={this.props.location.pathname}>{this.component()}</Layout>;
 	}
 }

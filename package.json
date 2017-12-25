@@ -53,6 +53,7 @@
   "redux-logger": "^3.0.6",
   "redux-promise-middleware": "^5.0.0",
   "redux-thunk": "^2.2.0",
+  "restify": "^6.3.4",
   "supertest": "^3.0.0",
   "webpack": "^3.10.0",
   "webpack-dev-server": "^2.9.7"
