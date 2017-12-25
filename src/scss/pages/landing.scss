@@ -17,7 +17,7 @@ main .content > section.landing {
 	}
 	
 	.hero {
-		background-image: url(/compiled/i/hero-img.jpeg);
+		background-image: url(/assets/i/hero-img.jpeg);
 		background-size: cover;
 		background-position: center;
 		filter: blur(1.5px);
@@ -32,7 +32,7 @@ main .content > section.landing {
 	}
 	
 	.broken-pattern {
-		background-image: url(/compiled/i/broken-pattern.svg);
+		background-image: url(/assets/i/broken-pattern.svg);
 		background-position-x: 100%;
 		background-size: 100%;
 		width: 57.5%;
@@ -98,7 +98,7 @@ main .content > section.landing {
 			z-index: 2;
 			
 			> * {
-				background-color: $orange;
+				background-color: $theme-color;
 				padding: 10px 16px;
 				display: table;
 				
@@ -130,7 +130,7 @@ main .content > section.landing {
 			
 			&:after {
 				content: '';
-				background-image: url(/compiled/i/chevron-right.svg);
+				background-image: url(/assets/i/chevron-right.svg);
 				background-position: center;
 				background-repeat: no-repeat;
 				width: 24px;
@@ -145,7 +145,7 @@ main .content > section.landing {
 			content: '';
 			width: $nav-btn-size;
 			height: 100%;
-			border: 4px solid $orange;
+			border: 4px solid $theme-color;
 			position: absolute;
 			top: -12px;
 			right: 33px;

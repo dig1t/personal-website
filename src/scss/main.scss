@@ -46,7 +46,7 @@ main {
 		
 		> section {
 			position: relative;
-			overflow-y: auto;
+			//overflow-y: auto;
 			
 			&, > .row {
 				min-height: 100%;
@@ -78,7 +78,7 @@ nav {
 			}
 			
 			&.active a {
-				color: $orange;
+				color: $theme-color;
 				cursor: default;
 			}
 			
@@ -112,7 +112,7 @@ nav {
 .icon- {
 	
 	&chevron-right {
-		background-image: url(/compiled/i/chevron-right.svg);
+		background-image: url(/assets/i/chevron-right.svg);
 		width: 24px;
 		height: 24px;
 	}

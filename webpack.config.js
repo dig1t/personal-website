@@ -11,7 +11,7 @@ module.exports = {
 	},
   entry: path.resolve(__dirname, 'src', 'index.js'),
   output: {
-		path: path.resolve(__dirname, 'public/compiled'),
+		path: path.resolve(__dirname, 'public/assets'),
 		filename: ENV === 'production' ? 'bundle.min.js' : 'bundle.js'
 	},
   module: {

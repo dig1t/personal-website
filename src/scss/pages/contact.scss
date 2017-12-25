@@ -50,6 +50,11 @@ $border-size: 2px;
 		border: 0;
 		padding: 12px 30px;
 		font-weight: 800;
+		transition: .1s ease-in-out;
+		
+		&:hover {
+			background-color: $theme-color;
+		}
 	}
 	
 	.image i {
@@ -58,8 +63,8 @@ $border-size: 2px;
 			transparent 0%,
 			rgba(0, 0, 0, .1) 80%
 		),
-		url(/compiled/i/noise.png),
-		url(/compiled/i/planets-final.png) center/cover;
+		url(/assets/i/noise.png),
+		url(/assets/i/planets-final.png) center/cover;
 		width: 100%;
 		display: block;
 	}

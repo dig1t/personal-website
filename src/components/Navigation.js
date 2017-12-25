@@ -13,7 +13,7 @@ const links = [
 export default class Navigation extends React.Component {
 	render() {
 		return <nav>
-			<Link className="logo" to="/"><img src="/compiled/i/logo.svg" height="35px" /></Link>
+			<Link className="logo" to="/"><img src="/assets/i/logo.svg" height="35px" /></Link>
 			<ul>
 				{links.map((link) => {
 					const className = classNames({

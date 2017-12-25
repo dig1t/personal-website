@@ -4,7 +4,7 @@ import Layout from './Layout'
 import Burger from './UI'
 
 export default class Landing extends React.Component {
-	renderComponent() {
+	component() {
 		return [
 			<section className="landing">
 				<div className="background">
@@ -33,6 +33,6 @@ export default class Landing extends React.Component {
 	}
 	
 	render() {
-		return <Layout page={this.props.location.pathname}>{this.renderComponent()}</Layout>;
+		return <Layout page={this.props.location.pathname}>{this.component()}</Layout>;
 	}
 }
