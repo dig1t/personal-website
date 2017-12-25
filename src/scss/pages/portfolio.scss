@@ -6,19 +6,25 @@
 	}
 	
 	.hero {
-		background: url(/assets/i/portfolio-hero.jpeg) center/cover;
-		height: 20vh;
-		margin-bottom: $spacing;
+		height: 30vh;
 		
 		.headings {
-			color: $white;
 			margin-left: 60px;
+			
+			h1 {
+				font-weight: 900;
+			}
+			
+			p {
+				font-size: 1.6em;
+				letter-spacing: .05em;
+			}
 		}
 	}
 	
 	.projects-grid {
 		margin-bottom: -$spacing; // hide last item's margin
-		column-count: 3;
+		column-count: 2;
 		column-gap: $spacing;
 		
 		.project {

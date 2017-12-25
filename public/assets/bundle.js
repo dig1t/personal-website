@@ -26832,7 +26832,7 @@ var Portfolio = function (_React$Component) {
 						'div',
 						{ className: 'headings' },
 						_react2.default.createElement(
-							'h2',
+							'h1',
 							null,
 							'Portfolio'
 						),
