@@ -27,7 +27,7 @@ const logger = store => next => action => {
 
 const store = createStore(
 	reducers,
-	window.__INITIAL_STATE__,
+	//window.__INITIAL_STATE__,
 	applyMiddleware(ReduxThunk, logger)
 )
 

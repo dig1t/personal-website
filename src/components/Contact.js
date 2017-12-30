@@ -28,9 +28,6 @@ export default class Contact extends React.Component {
 				message: ''
 			}
 		}
-		
-		this.handleInputChange = this.handleInputChange.bind(this)
-		this.handleSubmit = this.handleSubmit.bind(this)
 	}
 	
 	handleInputChange(event) {
@@ -65,23 +62,27 @@ export default class Contact extends React.Component {
 		return <section className="contact">
 			<div className="row-ng align-wrap">
 				<div className="col-6-ng">
-					<form onSubmit={this.handleSubmit}>
+					<form onSubmit={this.handleSubmit.bind(this)}>
 						<input type="text" name="_gotcha" style={{display: 'none'}} />
 						<div className="col-8-ng col-offset-2 row">
 							<div className="heading col-12-ng">
 								<h2>CONTACT ME</h2>
 							</div>
 							<div className="col-12-ng">
-								<input type="text" placeholder="Name" name="name" value={this.state.name} onChange={this.handleInputChange} />
+								<input type="text" placeholder="Name" name="name"
+									value={this.state.name} onChange={this.handleInputChange.bind(this)} />
 							</div>
 							<div className="col-12-ng">
-								<input type="email" placeholder="Email" name="email" value={this.state.email} onChange={this.handleInputChange} />
+								<input type="email" placeholder="Email" name="email"
+									value={this.state.email} onChange={this.handleInputChange.bind(this)} />
 							</div>
 							<div className="col-12-ng">
-								<input type="text" placeholder="Subject" name="_subject" value={this.state.subject} onChange={this.handleInputChange} />
+								<input type="text" placeholder="Subject" name="_subject"
+									value={this.state.subject} onChange={this.handleInputChange.bind(this)} />
 							</div>
 							<div className="col-12-ng">
-								<textarea placeholder="Message" name="message" value={this.state.message} onChange={this.handleInputChange} />
+								<textarea placeholder="Message" name="message"
+									value={this.state.message} onChange={this.handleInputChange.bind(this)} />
 							</div>
 							<div className="col-12-ng">
 								<button>SEND</button>
