@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import classNames from 'classnames';
+import classNames from 'classnames'
 
 const links = [
 	// [path, name]

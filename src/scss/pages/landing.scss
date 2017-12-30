@@ -4,39 +4,10 @@ main .content > section.landing {
 }
 
 .landing .background {
-	width: 115%;
-	height: 115%;
-	margin-top: -7.5%;
-	margin-left: -7.5%;
+	background: url(/assets/i/landing-hero.png) center/cover;
+	width: 100%;
+	height: 100%;
 	position: absolute;
-	
-	> * {
-		width: 100%;
-		height: 100%;
-		position: absolute;
-	}
-	
-	.hero {
-		background-image: url(/assets/i/hero-img.jpeg);
-		background-size: cover;
-		background-position: center;
-		filter: blur(1.5px);
-	}
-	
-	.overlay {
-		background-image: linear-gradient(
-			rgba(0, 0, 0, .4) 0%,
-			rgba(0, 0, 0, .6) 75%,
-			rgba(0, 0, 0, .8) 100%
-		)
-	}
-	
-	.broken-pattern {
-		background-image: url(/assets/i/broken-pattern.svg);
-		background-position-x: 100%;
-		background-size: 100%;
-		width: 57.5%;
-	}
 }
 
 .landing {

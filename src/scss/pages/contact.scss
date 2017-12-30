@@ -37,8 +37,9 @@ $border-size: 2px;
 			content: '';
 			background-color: $black;
 			width: 8px;
-			height: 100%;
 			position: absolute;
+			top: -2px;
+			bottom: -2px;
 			right: 0;
 		}
 	}
