@@ -22,14 +22,7 @@ class Burger extends React.Component {
 class Modal extends React.Component {
   static defaultProps = {
     open: false,
-    title: '',
-    toggleModal: () => {
-      this.state(prevState => {
-        this.setState({
-          open: prevState.open
-        })
-      }
-    }
+    title: ''
   }
   
 	constructor(props) {
