@@ -90,10 +90,10 @@ export default class Portfolio extends React.Component {
 		_.modal.image(source);*/
 	}
 	
-	toggleModal = event => {
-		console.log('togglemodal called setting to: ', !this.state.modalOpen)
+	toggleModal = (event, open) => {
+		console.log('togglemodal called setting to: ', open || !this.state.modalOpen)
 		this.setState(prevState => ({
-			modalOpen: !prevState.modalOpen
+			modalOpen: open || !prevState.modalOpen
 		}))
 	}
 	
@@ -109,15 +109,19 @@ export default class Portfolio extends React.Component {
 				</div>
 				<div>
 					<button onClick={this.toggleModal}>Open Modal</button>
-					<Modal title="Header" toggleModal={this.toggleModal} open={this.state.modalOpen}>
-						<p>Test</p>
-					</Modal>
 				</div>
 				<div className="projects-grid">
 					{this.state.projectsList.map(project => {
 						return <div key={project.id} className="project"
 						data-image={project.image || project.thumbnail} data-id={project.id}
-						onClick={this.handleProjectClick.bind(this)}>
+						onClick={this.toggleModal(true)}>
+							<Modal
+								title="Header"
+								type="image"
+								image={project.thumbnail || project.image}
+								toggleModal={this.toggleModal}
+								open={this.state.modalOpen}
+							/>
 							<img src={project.thumbnail || project.image} />
 							<div className="name">
 								<h2>{project.name}</h2>

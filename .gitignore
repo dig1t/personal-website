@@ -17,7 +17,5 @@ node_modules/
 # Compiled
 public/assets/*
 !public/assets/manifest.json
-!public/assets/*.min.css
-!public/assets/*.j
 !public/assets/fonts/*
 !public/assets/i/*
