@@ -15,7 +15,9 @@ node_modules/
 .sass-cache/
 
 # Compiled
-public/compiled/*
-!public/compiled/manifest.json
-!public/compiled/fonts/*
-!public/compiled/i/*
+public/assets/*
+!public/assets/manifest.json
+!public/assets/*.min.css
+!public/assets/*.j
+!public/assets/fonts/*
+!public/assets/i/*
