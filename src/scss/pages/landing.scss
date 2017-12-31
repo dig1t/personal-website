@@ -4,7 +4,7 @@ main .content > section.landing {
 }
 
 .landing .background {
-	background: url(/assets/i/landing-hero.png) center/cover;
+	background: url(/assets/i/noise.png), url(/assets/i/landing-hero.png) center/cover;
 	width: 100%;
 	height: 100%;
 	position: absolute;
@@ -46,6 +46,25 @@ main .content > section.landing {
 		left: calc(10% - 15px);
 		top: calc(50% - 20%);
 		z-index: 1;
+		
+		.tr, .bl {
+			background-image: url(/assets/i/landing-spritesheet.svg);
+			background-size: 100px 200px;
+			width: 100px;
+			height: 100px;
+			position: absolute;
+		}
+		
+		.tr {
+			top: -30px;
+			right: -20px;
+		}
+		
+		.bl {
+			background-position-y: 100px;
+			bottom: -30px;
+			left: -20px;
+		}
 	}
 	
 	.name {
@@ -57,15 +76,18 @@ main .content > section.landing {
 			font-size: 8em;
 			font-weight: 900;
 			line-height: .85em;
+			position: relative;
+			z-index: 3; // place h1 over .title
 		}
 		
 		.title {
 			color: #fff;
 			font-size: 3.5em;
 			font-style: italic;
-			font-weight: 200;
+			font-weight: 300;
 			line-height: 1.2em;
 			position: relative;
+			top: -20px;
 			z-index: 2;
 			
 			> * {
