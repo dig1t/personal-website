@@ -15,7 +15,7 @@ class Burger extends React.Component {
   }
   
 	render() {
-    return <ui className={"nav-toggle hamburger " + (this.state.open ? 'active' : '')} onClick={this.toggle}><i /></ui>;
+    return <ui className={'nav-toggle hamburger ' + (this.state.open ? 'active' : '')} onClick={this.toggle}><i /></ui>;
   }
 }
 
@@ -44,7 +44,7 @@ class Modal extends React.Component {
           <button className="close fa fa-close" onClick={this.props.toggleModal} />
           <div className="main">
             <div className="header">{this.props.title}</div>
-            <div className="content">{this.props.children}</div>
+            <div className="content">{this.el || this.props.children}</div>
           </div>
         </div>
       </div>
