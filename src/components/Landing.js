@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import Layout from './Layout'
-import Burger from './UI'
+//import Burger from './UI'
 
 export default class Landing extends React.Component {
 	component() {
@@ -23,7 +23,7 @@ export default class Landing extends React.Component {
 					</h1>
 					<div className="title">
 						<div>Web Developer</div>
-						<div>Graphic Designer</div>
+						<div>UI Designer</div>
 					</div>
 				</div>
 				<div className="col-6 nav-btn">

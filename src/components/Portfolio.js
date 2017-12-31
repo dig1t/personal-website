@@ -1,6 +1,7 @@
 import React from 'react'
 import Layout from './Layout'
 import classNames from 'classnames'
+import { Modal } from './UI'
 
 const filters = {
 	all: 'All',
@@ -49,7 +50,8 @@ export default class Portfolio extends React.Component {
 			],
 			filter: filters.all, // default filter
 			filterButtons,
-			filterTarget: null
+			filterTarget: null,
+			modalOpen: false
 		}
 		
 		const filterButtons = this.getFilterButtons()
@@ -88,6 +90,13 @@ export default class Portfolio extends React.Component {
 		_.modal.image(source);*/
 	}
 	
+	toggleModal = event => {
+		console.log('togglemodal called setting to: ', !this.state.modalOpen)
+		this.setState(prevState => ({
+			modalOpen: !prevState.modalOpen
+		}))
+	}
+	
 	component() {
 		return <section className="portfolio">
 			<div className="wrap">
@@ -98,10 +107,16 @@ export default class Portfolio extends React.Component {
 				<div className="filter">
 					{this.state.filterButtons}
 				</div>
+				<div>
+					<button onClick={this.toggleModal}>Open Modal</button>
+					<Modal title="Header" toggleModal={this.toggleModal} open={this.state.modalOpen}>
+						<p>Test</p>
+					</Modal>
+				</div>
 				<div className="projects-grid">
 					{this.state.projectsList.map(project => {
 						return <div key={project.id} className="project"
-						data-image={project.image || project.thumbnail} data-id={data.id}
+						data-image={project.image || project.thumbnail} data-id={project.id}
 						onClick={this.handleProjectClick.bind(this)}>
 							<img src={project.thumbnail || project.image} />
 							<div className="name">

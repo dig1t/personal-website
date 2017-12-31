@@ -36,6 +36,7 @@ button {
 main {
 	height: 100vh;
 	padding: 25px;
+	padding-top: 0;
 	
 	.content {
 		background-color: $gray;
@@ -56,9 +57,9 @@ main {
 
 nav {
 	background-color: #fff;
-	height: 60px;
+	height: 70px;
 	padding: 0 30px;
-	line-height: 60px;
+	line-height: 70px;
 	
 	.logo {
 		display: inline-block;

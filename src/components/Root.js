@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { BrowserRouter } from 'react-router-dom'
+import BrowserRouter from 'react-router-dom'
 import { Router, Route, Switch } from 'react-router'
 import { createBrowserHistory } from 'history'
 import { createStore, applyMiddleware } from 'redux'

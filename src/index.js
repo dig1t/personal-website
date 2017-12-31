@@ -9,5 +9,5 @@ if (window.__INITIAL_STATE__) delete window.__INITIAL_STATE__
 
 ReactDOM.hydrate(
 	<Root/>,
-	document.getElementById('root')
+	document.getElementById('app-root')
 )

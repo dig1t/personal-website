@@ -39,7 +39,7 @@ section {
 	overflow: hidden;
 }
 
-$heading-scale: 1.5;
+$heading-scale: 1.618;
 $heading-scale-result: 1;
 
 @for $i from 4 through 1 {
@@ -51,8 +51,8 @@ $heading-scale-result: 1;
 }
 
 a, em, p, strong, u {
-	font-size: 1.3em;
-	line-height: 1.3em;
+	font-size: #{$base-font-size}em;
+	line-height: #{$base-font-size}em;
 }
 
 a {
@@ -150,7 +150,7 @@ td, th {
 	margin: 4px;
 	border-bottom: 1px solid #d5d5d5;
 	padding: 8px 12px;
-	font-size: 1.5em;
+	font-size: #{$base-font-size}em;
 	text-align: left;
 	
 	&:first-child {

@@ -61,13 +61,13 @@ $tooltip-padding: 5px;
 // Modal
 
 .modal {
-	background-color: rgba(5, 10, 15, .8);
+	background-color: transparentize($black, .8);
 	width: 100%;
 	height: 100%;
+	display: table;
+	overflow: hidden;
 	position: fixed;
 	top: 0;
-	display: none;
-	overflow: hidden;
 	z-index: 999999999;
 	
 	&.open {
@@ -75,19 +75,23 @@ $tooltip-padding: 5px;
 	}
 	
 	button.close {
-		color: #bbb;
-		width: 30px;
-		height: 30px;
+		$size: 30px;
+		
+		color: $white;
+		background-color: transparent;
+		width: $size;
+		height: $size;
+		padding: 0;
 		font-size: 3em;
 		text-align: center;
-		line-height: 30px;
+		line-height: $size;
 		position: absolute;
-		top: -30px;
-		right: -30px;
+		top: -$size;
+		right: -$size;
 		transition-duration: .2s;
 		
 		&:hover {
-			color: #fff;
+			color: $gray;
 		}
 	}
 	
