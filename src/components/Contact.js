@@ -58,7 +58,7 @@ export default class Contact extends React.Component {
 			});
 	}
 	
-	component() {
+	renderComponent() {
 		return <section className="contact">
 			<div className="row-ng align-wrap">
 				<div className="col-6-ng">
@@ -105,6 +105,6 @@ export default class Contact extends React.Component {
 	}
 	
 	render() {
-		return <Layout page={this.props.location.pathname}>{this.component()}</Layout>;
+		return <Layout page={this.props.location.pathname}>{this.renderComponent()}</Layout>;
 	}
 }

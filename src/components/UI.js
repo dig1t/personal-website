@@ -27,9 +27,7 @@ class Modal extends React.Component {
   
 	constructor(props) {
     super(props)
-    this.state = {
-      open: false
-    }
+    this.state = props
   }
   
   componentWillReceiveProps(newProps) {
@@ -37,6 +35,14 @@ class Modal extends React.Component {
   }
   
   modalComponent() {
+    let content = this.props.children
+    
+    switch(this.props.type) {
+      case 'image':
+        content = <img src={this.props.image} alt={this.props.imgAlt} />
+        break
+    }
+    
     return !this.state.open ? null : (<div className="modal">
       <div className="align">
         <div className="background-close" onClick={this.props.toggleModal} />
@@ -44,7 +50,7 @@ class Modal extends React.Component {
           <button className="close fa fa-close" onClick={this.props.toggleModal} />
           <div className="main">
             <div className="header">{this.props.title}</div>
-            <div className="content">{this.el || this.props.children}</div>
+            <div className="content">{content}</div>
           </div>
         </div>
       </div>
