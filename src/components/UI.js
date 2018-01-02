@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import Navigation from './Navigation'
+import classNames from 'classnames'
 
 class Burger extends React.Component {
   constructor() {
@@ -43,11 +44,13 @@ class Modal extends React.Component {
         break
     }
     
-    return !this.state.open ? null : (<div className="modal">
+    const className = classNames('modal', this.props.type)
+    
+    return !this.state.open ? null : (<div className={className}>
       <div className="align">
         <div className="background-close" onClick={this.props.toggleModal} />
         <div className="container">
-          <button className="close fa fa-close" onClick={this.props.toggleModal} />
+          <button className="close fas fa-times" onClick={this.props.toggleModal} />
           <div className="main">
             <div className="header">{this.props.title}</div>
             <div className="content">{content}</div>
@@ -59,12 +62,10 @@ class Modal extends React.Component {
   
   render() {
     // prevent errors when server-side rendering by returning null
-    if (typeof window === 'undefined') return null
-    
-    return ReactDOM.createPortal(
+    return typeof window !== 'undefined' ? ReactDOM.createPortal(
       this.modalComponent(),
       document.getElementById('modal-root')
-    )
+    ) : null
   }
 }
 

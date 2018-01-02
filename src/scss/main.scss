@@ -1,22 +1,11 @@
 @import 'base';
-@import 'plugin';
+@import 'ui';
 @import 'util';
 @import 'config';
 
 @import 'pages/landing';
 @import 'pages/portfolio';
 @import 'pages/contact';
-
-// FOR DEVELOPMENT ONLY
-.griddle {
-	background: url(http://griddle.it/1200-12-30) repeat-y center top;
-}
-
-section.align-wrap > h3 {
-	margin: auto;
-}
-
-//
 
 body {
 	color: $black;
