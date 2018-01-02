@@ -106,6 +106,7 @@ export default class Portfolio extends React.Component {
 				</div>
 				
 				<div className="filter">{this.state.filterButtons}</div>
+				
 				<div className="projects-grid">
 					{this.state.projectsList.map(project => {
 						return [
