@@ -14,7 +14,7 @@ export default class Navigation extends React.Component {
 	render() {
 		return <nav>
 			<Link className="logo" to="/"><img src="/assets/i/logo.svg" height="35px" /></Link>
-			<ul>
+			<ul className="align-wrap">
 				{links.map((link) => {
 					const className = classNames({
 						active: this.props.page === link[0]

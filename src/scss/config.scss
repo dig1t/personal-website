@@ -7,10 +7,28 @@ $orange: #f98311;
 $blue: #09192d;
 $purple: #6244bb;
 
-$base-font-size: 1.5;
+$base-font-size: 1.5em;
 $theme-color: $orange;
 $letter-spacing: .08em;
 $border-radius: 4px;
+
+$type-scale: ();
+$type-scale-ratio: 1.618; // golden
+$type-scale-base: $base-font-size;
+
+@function type-scale($steps) {
+	@if $steps == 0 {
+		@return $type-scale-base;
+	}
+	
+	$type-scale-result: $type-scale-base;
+	
+	@for $i from 1 through $steps {
+		$type-scale-result: $type-scale-result * $type-scale-ratio;
+	}
+	
+	@return round($type-scale-result * 20) / 20; // round to the nearest hundredth
+}
 
 $icon-prefix: 'fa';
 
@@ -30,6 +48,7 @@ $breakpoints: (
 	
 	desktop-small: 1600px, // 1300px
 	desktop: 1920px, // 1400px
+	
 	4k: 2560px
 );
 

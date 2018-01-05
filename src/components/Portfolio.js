@@ -100,9 +100,14 @@ export default class Portfolio extends React.Component {
 	renderComponent() {
 		return <section className="portfolio">
 			<div className="wrap">
-				<div className="heading">
-					<h1>Portfolio</h1>
-					<p>Here is a list of projects I have worked on.</p>
+				<div className="heading row">
+					<div className="col-6">
+						<h1>Portfolio</h1>
+						<p>Here is a list of projects I have worked on.</p>
+					</div>
+					<div className="col-6">
+						<div className="page">02</div>
+					</div>
 				</div>
 				
 				<div className="filter">{this.state.filterButtons}</div>
