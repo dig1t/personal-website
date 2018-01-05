@@ -39,20 +39,15 @@ section {
 	overflow: hidden;
 }
 
-$heading-scale: 1.618;
-$heading-scale-result: 1;
+h1 { font-size: type-scale(3); }
+h2 { font-size: type-scale(2); }
+h3 { font-size: type-scale(1); }
+h4 { font-size: type-scale(0); }
 
-@for $i from 4 through 1 {
-	$heading-scale-result: $heading-scale-result * $heading-scale;
-	
-	h#{$i} {
-		font-size: #{$heading-scale-result}em;
-	}
-}
 
 a, em, p, strong, u {
-	font-size: #{$base-font-size}em;
-	line-height: #{$base-font-size}em;
+	font-size: type-scale(0);
+	line-height: type-scale(0);
 }
 
 a {
@@ -83,7 +78,7 @@ select, input, textarea {
 	border: 1px solid lighten($black, 50%);
 	border-radius: 3px;
 	padding: 6px;
-	font-size: 14px;
+	font-size: type-scale(0);
 	display: block;
 	
 	&:focus {
@@ -146,11 +141,11 @@ table {
 }
 
 td, th {
-	background: #fff;
+	background: $white;
 	margin: 4px;
 	border-bottom: 1px solid #d5d5d5;
 	padding: 8px 12px;
-	font-size: #{$base-font-size}em;
+	font-size: type-scale(0);
 	text-align: left;
 	
 	&:first-child {
@@ -197,7 +192,7 @@ $gutter: 30px;
     clear: both;
   	
   	&:before, &:after {
-  		content: " ";
+  		content: ' ';
   		display: table;
   		clear: both;
   	}

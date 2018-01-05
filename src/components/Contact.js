@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React from 'react'
 import Layout from './Layout'
+import { Input } from './UI'
 
 const links = [
 	{
@@ -28,6 +29,8 @@ export default class Contact extends React.Component {
 				message: ''
 			}
 		}
+		
+		this.handleInputChange = this.handleInputChange.bind(this)
 	}
 	
 	handleInputChange(event) {
@@ -69,30 +72,37 @@ export default class Contact extends React.Component {
 								<h2>CONTACT ME</h2>
 							</div>
 							<div className="col-12-ng">
-								<input type="text" placeholder="Name" name="name"
-									value={this.state.name} onChange={this.handleInputChange.bind(this)} />
+								<Input name="name" placeholder="Name" value={this.state.form.name}
+									validateFor="name"
+									onBlur={this.handleBlur}
+									onChange={this.handleInputChange} />
 							</div>
 							<div className="col-12-ng">
-								<input type="email" placeholder="Email" name="email"
-									value={this.state.email} onChange={this.handleInputChange.bind(this)} />
+								<Input type="email" name="email" placeholder="Email" value={this.state.form.email}
+									validateFor="email"
+									onBlur={this.handleBlur}
+									onChange={this.handleInputChange} />
 							</div>
 							<div className="col-12-ng">
-								<input type="text" placeholder="Subject" name="_subject"
-									value={this.state.subject} onChange={this.handleInputChange.bind(this)} />
+								<Input name="_subject" placeholder="Subject" value={this.state.form._subject}
+									validateFor="email"
+									onBlur={this.handleBlur}
+									onChange={this.handleInputChange} />
 							</div>
 							<div className="col-12-ng">
-								<textarea placeholder="Message" name="message"
-									value={this.state.message} onChange={this.handleInputChange.bind(this)} />
+								<Input type="textarea" name="message" placeholder="Message" value={this.state.form.message}
+									onBlur={this.handleBlur}
+									onChange={this.handleInputChange} />
 							</div>
 							<div className="col-12-ng">
-								<button>SEND</button>
+								<button type="submit">SEND</button>
 							</div>
 						</div>
 					</form>
 					<ul className="links">
 						{links.map((link) => {
 							return <li key={link.service}>
-								<a className={"fa fa-" + link.service} href={link.url} target="_blank" data-service={link.service}></a>
+								<a className={"fab fa-" + link.service} href={link.url} target="_blank" data-service={link.service}></a>
 							</li>;
 						})}
 					</ul>

@@ -2,8 +2,14 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import Navigation from './Navigation'
 import classNames from 'classnames'
+import PropTypes from 'prop-types'
+import validator from 'react-validation'
 
 class Burger extends React.Component {
+	static propTypes = {
+		open: PropTypes.element.bool
+	}
+	
   constructor() {
     super()
     this.state = {
@@ -32,7 +38,7 @@ class Modal extends React.Component {
   }
   
   componentWillReceiveProps(newProps) {
-    this.setState({open: newProps.open})
+    if (newProps.open) this.setState({open: newProps.open})
   }
   
   modalComponent() {
@@ -69,7 +75,67 @@ class Modal extends React.Component {
   }
 }
 
+class Input extends React.Component {
+	constructor(props) {
+		super(props)
+		
+		this.state = {
+			attributes: {
+				placeholder: this.props.placeholder,
+				name: this.props.name,
+				onChange: this.props.onChange
+			},
+			type: this.props.type,
+			value: this.props.value,
+			statusType: 'error',
+			statusDisplay: false,
+			statusMessage: ''
+		}
+		
+		this.handleBlur = this.handleBlur.bind(this, validator)
+	}
+	
+	handleBlur(event) {
+		const target = event.target
+		
+		let pass = false
+		
+		switch (this.props.validateFor) {
+			case 'email':
+				pass = validator.isEmail(this.props.value)
+		}
+		
+		if (!pass) {
+			this.setState({
+				statusDisplay: true
+			})
+		}
+	}
+	
+	componentWillReceiveProps(nextProps) {
+		if (this.props.value !== nextProps.value) this.setState({value: nextProps.value})
+  }
+	
+	el() {
+		return this.state.type === 'textarea' ? (
+			<textarea {...this.state.attributes} onBlur={this.handleBlur} />
+		) : (
+			<input type={this.state.type} {...this.state.attributes} onBlur={this.handleBlur} />
+		)
+	}
+	
+	render() {
+		return <div className={'input input-' + this.state.type}>
+			{this.el()}
+			{this.state.statusDisplay ? (
+				<div className={this.state.statusType}>{this.state.statusMessage}</div>
+			) : null}
+		</div>
+	}
+}
+
 export {
   Burger,
-  Modal
+  Modal,
+	Input
 }

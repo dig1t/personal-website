@@ -18,7 +18,7 @@ button {
 	background-color: $black;
 	border-radius: $border-radius;
 	padding: 12px 18px;
-	font-size: 1.5em;
+	font-size: type-scale(0);
 	font-weight: bold;
 }
 
@@ -56,10 +56,10 @@ nav {
 	}
 	
 	ul {
-		font-size: 1.1em;
 		float: right;
 		
 		li {
+			line-height: 1;
 			display: inline-block;
 			
 			&:not(:last-child) {
