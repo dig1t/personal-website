@@ -1,9 +1,12 @@
 import { combineReducers } from 'redux'
 
-import users from './users'
+//import users from './users'
+import listFilters from './list-filters'
+import portfolio from './list-filters'
 
-const reducers = combineReducers({
-	users
+const allReducers = combineReducers({
+	listFilters,
+	portfolio
 })
 
-export default reducers
+export default allReducers

@@ -2,6 +2,7 @@ import React from 'react'
 import Layout from './Layout'
 import classNames from 'classnames'
 import { Modal } from './UI'
+import { connect } from 'react-redux'
 
 const filters = {
 	all: 'All',
@@ -9,50 +10,12 @@ const filters = {
 	graphic_design: 'Graphic Design'
 }
 
-export default class Portfolio extends React.Component {
+class Portfolio extends React.Component {
 	constructor() {
 		super()
 		
 		this.state = {
-			portfolio: [
-				{
-					name: 'A very long project title',
-					description: 'short description about project 1.',
-					type: filters.web,
-					thumbnail: 'https://picsum.photos/600/500',
-					id: 'btrbrgbfveddr',
-					username: 'Digit'
-				},
-				{
-					name: 'Project 2',
-					description: 'short description about project 2.',
-					type: filters.graphic_design,
-					thumbnail: 'https://picsum.photos/800/1000',
-					id: 'rymtrh45jny5tnhrthth',
-					username: 'Digit'
-				},
-				{
-					name: 'Ipsum',
-					description: 'short description about project 3.',
-					type: filters.web,
-					thumbnail: 'https://picsum.photos/300/400',
-					id: 'h56jde76y67jnythjns54h',
-					username: 'Digit'
-				},
-				{
-					name: 'Lorem Branding',
-					description: 'short description about projec-t 4.',
-					type: filters.web,
-					thumbnail: 'https://picsum.photos/500/800',
-					id: 'k6rdey5j5e5j',
-					username: 'Digit'
-				}
-			],
-			filter: filters.all, // default filter
-			filterButtons: null,
-			filterTarget: null,
-			modalTargetId: '',
-			modalOpen: false
+
 		}
 		
 		this.state.filterButtons = this.getFilterButtons()
@@ -91,7 +54,6 @@ export default class Portfolio extends React.Component {
 			// open modal if prev target id does not match
 			// if it matches then reverse the boolean value of modalOpen
 			modalOpen: prevState.modalTargetId === id ? !prevState.modalOpen : true,
-			
 			// set to the most recently clicked project id
 			modalTargetId: id
 		}))
@@ -140,3 +102,11 @@ export default class Portfolio extends React.Component {
 		return <Layout page={this.props.location.pathname}>{this.renderComponent()}</Layout>;
 	}
 }
+
+function mapStateToProps(state) {
+	return {
+		listFilters: state.listFilters
+	}
+}
+
+export default connect(mapStateToProps)(Portfolio)
