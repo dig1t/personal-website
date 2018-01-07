@@ -25,17 +25,13 @@ const logger = store => next => action => {
 	return result
 }
 
-const store = createStore(
+let store = createStore(
 	reducers,
-	//window.__INITIAL_STATE__,
+	typeof window !== 'undefined' && window.__INITIAL_STATE__,
 	applyMiddleware(ReduxThunk, logger)
 )
 
 export default class Root extends React.Component {
-	static propTypes = {
-		store: PropTypes.object.isRequired
-	}
-	
 	render() {
 		return <Provider store={store}>
 			<Router history={history}>

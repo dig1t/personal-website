@@ -1,0 +1,4 @@
+export const FILTER_CHANGE = 'FILTER_CHANGE'
+export const FILTER_ALL = 'FILTER_ALL'
+export const FILTER_WEB = 'FILTER_WEB'
+export const FILTER_DESIGN = 'FILTER_DESIGN'

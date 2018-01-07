@@ -1,12 +1,12 @@
 import React from 'react'
 import { Router, Route, Switch } from 'react-router'
 
-import Landing from './Landing'
-import Portfolio from './Portfolio'
-import Store from './Store'
-import Gallery from './Gallery'
-import Contact from './Contact'
-import Error from './Error'
+import { Landing } from './Landing'
+import { Portfolio } from './Portfolio'
+import { Store } from './Store'
+import { Gallery } from './Gallery'
+import { Contact } from './Contact'
+import { Error } from './Error'
 
 const Routes = () => (
 	<Switch>

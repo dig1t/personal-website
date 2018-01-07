@@ -38,7 +38,7 @@ class Modal extends React.Component {
   }
   
   componentWillReceiveProps(newProps) {
-    if (newProps.open) this.setState({open: newProps.open})
+    this.setState({open: newProps.open})
   }
   
   modalComponent() {

@@ -1,4 +1,5 @@
 import axios from 'axios'
+import { FILTER_CHANGE } from '../actionTypes.js'
 
 export function fetchUsers() {
 	return function(dispatch) {
@@ -9,5 +10,11 @@ export function fetchUsers() {
 			.catch((err) => {
 				dispatch({type: 'FETCH_USERS_ERROR', payload: err})
 			})
+	}
+}
+
+export function setFilter(filter) {
+	return {
+		type: FILTER_CHANGE
 	}
 }
