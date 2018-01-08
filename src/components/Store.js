@@ -1,14 +1,14 @@
 import React from 'react'
 import Layout from './Layout'
 
-export default class Store extends React.Component {
+export class Store extends React.Component {
 	component() {
 		return <section className="store align-wrap">
 			<h3>Coming Soon</h3>
-		</section>;
+		</section>
 	}
 	
 	render() {
-		return <Layout page={this.props.location.pathname}>{this.component()}</Layout>;
+		return <Layout page={this.props.location.pathname}>{this.component()}</Layout>
 	}
 }

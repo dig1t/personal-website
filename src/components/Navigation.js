@@ -1,12 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import classNames from 'classnames'
+//import Burger from './UI'
 
 const links = [
 	// [path, name]
 	['/', 'Home'],
 	['/portfolio', 'Portfolio'],
-	['/store', 'Store'],
+	//['/store', 'Store'],
 	['/contact', 'Contact']
 ]
 
@@ -22,9 +23,9 @@ export default class Navigation extends React.Component {
 					
 					return <li key={link[0]} className={className}>
 						<Link to={link[0]}>{link[1]}</Link>
-					</li>;
+					</li>
 				})}
 			</ul>
-		</nav>;
+		</nav>
 	}
 }

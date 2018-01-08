@@ -18,7 +18,7 @@ const links = [
 	}
 ]
 
-export default class Contact extends React.Component {
+export class Contact extends React.Component {
 	constructor(props) {
 		super(props)
 		this.state = {
@@ -46,15 +46,11 @@ export default class Contact extends React.Component {
 	
 	handleSubmit(event) {
 		event.preventDefault()
-		const data = new FormData(event.target)
-		
-		console.log(this.state)
-		
 		axios.post('https://formspree.io/contact@javierm.net', this.state.form, {
 				headers: {'Content-Type': 'application/json'}
 			})
 		  .then((response) => {
-		    console.log('saved successfully', response)
+		    console.log('saved successfully', response) // REDIRECT TO THANKS PAGE
 		  })
 			.catch((error) => {
 				console.log(error)
@@ -72,7 +68,7 @@ export default class Contact extends React.Component {
 								<h2>CONTACT ME</h2>
 							</div>
 							<div className="col-12-ng">
-								<Input name="name" placeholder="Name" value={this.state.form.name}
+								<Input name="name" placeholder="Name" minlength="2" value={this.state.form.name}
 									validateFor="name"
 									onBlur={this.handleBlur}
 									onChange={this.handleInputChange} />
@@ -90,7 +86,7 @@ export default class Contact extends React.Component {
 									onChange={this.handleInputChange} />
 							</div>
 							<div className="col-12-ng">
-								<Input type="textarea" name="message" placeholder="Message" value={this.state.form.message}
+								<Input type="textarea" name="message" placeholder="Message" minlength="1" value={this.state.form.message}
 									onBlur={this.handleBlur}
 									onChange={this.handleInputChange} />
 							</div>
@@ -111,10 +107,10 @@ export default class Contact extends React.Component {
 					<i />
 				</div>
 			</div>
-		</section>;
+		</section>
 	}
 	
 	render() {
-		return <Layout page={this.props.location.pathname}>{this.renderComponent()}</Layout>;
+		return <Layout page={this.props.location.pathname}>{this.renderComponent()}</Layout>
 	}
 }

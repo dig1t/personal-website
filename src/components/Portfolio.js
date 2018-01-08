@@ -11,16 +11,12 @@ const filters = {
 }
 
 class Portfolio extends React.Component {
-	constructor() {
+	/*constructor() {
 		super()
 		
-		this.state = {
-
-		}
-		
-		this.state.filterButtons = this.getFilterButtons()
-		this.state.projectsList = this.state.portfolio // show all projects by default
-	}
+		//this.state.filterButtons = this.getFilterButtons()
+		//this.state.projectsList = this.state.portfolio // show all projects by default
+	}*/
 	
 	// give current filter button the active class
 	getFilterButtons() {
@@ -95,15 +91,17 @@ class Portfolio extends React.Component {
 					})}
 				</div>
 			</div>
-		</section>;
+		</section>
 	}
 	
 	render() {
-		return <Layout page={this.props.location.pathname}>{this.renderComponent()}</Layout>;
+		console.log('portfolio!')
+		return <Layout page={this.props.location.pathname}>{this.renderComponent()}</Layout>
 	}
 }
 
 function mapStateToProps(state) {
+	console.log('portfolio??')
 	return {
 		listFilters: state.listFilters
 	}

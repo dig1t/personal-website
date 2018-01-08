@@ -5,7 +5,7 @@ import Navigation from './Navigation'
 
 @connect((store) => {
 	return {
-		''users: store.users.users
+		'users': store.users.users
 	}
 })
 
