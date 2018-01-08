@@ -1,10 +1,15 @@
 import React from 'react'
+import Layout from './Layout'
 
 // todo: style page
-export default class Error extends React.Component {
-	render() {
+export class Error extends React.Component {
+	renderComponent() {
 		return <div>
 			Error 404
-		</div>;
+		</div>
+	}
+	
+	render() {
+		return <Layout page={this.props.location.pathname}>{this.renderComponent()}</Layout>
 	}
 }

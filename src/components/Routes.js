@@ -1,5 +1,5 @@
 import React from 'react'
-import { Router, Route, Switch } from 'react-router'
+import { Route, Switch } from 'react-router'
 
 import { Landing } from './Landing'
 import { Portfolio } from './Portfolio'

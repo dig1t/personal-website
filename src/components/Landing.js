@@ -1,9 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import Layout from './Layout'
-//import Burger from './UI'
 
-export default class Landing extends React.Component {
+export class Landing extends React.Component {
 	renderComponent() {
 		return <section className="landing">
 			<div className="background">
@@ -38,10 +37,10 @@ export default class Landing extends React.Component {
 					</div>
 				</div>
 			</div>
-		</section>;
+		</section>
 	}
 	
 	render() {
-		return <Layout page={this.props.location.pathname}>{this.renderComponent()}</Layout>;
+		return <Layout page={this.props.location.pathname}>{this.renderComponent()}</Layout>
 	}
 }

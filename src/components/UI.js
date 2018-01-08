@@ -22,7 +22,7 @@ class Burger extends React.Component {
   }
   
 	render() {
-    return <ui className={'nav-toggle hamburger ' + (this.state.open ? 'active' : '')} onClick={this.toggle}><i /></ui>;
+    return <ui className={'nav-toggle hamburger ' + (this.state.open ? 'active' : '')} onClick={this.toggle}><i /></ui>
   }
 }
 
