@@ -3,12 +3,9 @@ import Layout from './Layout'
 import classNames from 'classnames'
 import { Modal } from './UI'
 import { connect } from 'react-redux'
+import { getFilterButtons } from '../actions/filter-action.js'
 
-const filters = {
-	all: 'All',
-	web: 'Web',
-	graphic_design: 'Graphic Design'
-}
+// give current filter button the active class
 
 class Portfolio extends React.Component {
 	/*constructor() {
@@ -17,17 +14,6 @@ class Portfolio extends React.Component {
 		//this.state.filterButtons = this.getFilterButtons()
 		//this.state.projectsList = this.state.portfolio // show all projects by default
 	}*/
-	
-	// give current filter button the active class
-	getFilterButtons() {
-		return Object.keys(filters).map(filter => {
-			const className = classNames({
-				active: this.state.filter === filters[filter]
-			})
-			
-			return <button key={filter} className={className} onClick={this.handleFilterClick.bind(this, filter)}>{filters[filter]}</button>
-		})
-	}
 	
 	handleFilterClick(filter, event) {
 		this.setState({filter: filters[filter]}, () => {
@@ -68,7 +54,7 @@ class Portfolio extends React.Component {
 					</div>
 				</div>
 				
-				<div className="filter">{this.state.filterButtons}</div>
+				<div className="filter">{this.state.getFilterButtons()}</div>
 				
 				<div className="projects-grid">
 					{this.state.projectsList.map(project => {
@@ -96,15 +82,22 @@ class Portfolio extends React.Component {
 	
 	render() {
 		console.log('portfolio!')
+		console.log(this.props.portfolio)
 		return <Layout page={this.props.location.pathname}>{this.renderComponent()}</Layout>
 	}
 }
 
-function mapStateToProps(state) {
+const mapStateToProps = (state) => {
 	console.log('portfolio??')
 	return {
-		listFilters: state.listFilters
+		listFilters: state.listFilters,
+		portfolio: state.portfolio
 	}
 }
 
-export default connect(mapStateToProps)(Portfolio)
+const mapDispatchToProps = (dispatch) => {
+	console.log('disp to props')
+	getFilterButtons: getFilterButtons
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Portfolio)

@@ -2,7 +2,7 @@ import React from 'react'
 import { Route, Switch } from 'react-router'
 
 import { Landing } from './Landing'
-import { Portfolio } from './Portfolio'
+import Portfolio from './Portfolio'
 import { Store } from './Store'
 import { Gallery } from './Gallery'
 import { Contact } from './Contact'
