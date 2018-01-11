@@ -37,15 +37,15 @@
   "grunt-contrib-concat": "^1.0.1",
   "grunt-contrib-cssmin": "^2.2.1",
   "grunt-contrib-sass": "^1.0.0",
-  "grunt-contrib-uglify": "^3.2.1",
+  "grunt-contrib-uglify": "^3.3.0",
   "grunt-contrib-watch": "^1.0.0",
   "history": "^4.7.2",
-  "mocha": "^4.0.1",
+  "mocha": "^4.1.0",
   "prop-types": "^15.6.0",
   "proptypes": "^1.1.0",
   "react": "^16.2.0",
   "react-dom": "^16.2.0",
-  "react-ga": "^2.3.5",
+  "react-ga": "^2.4.1",
   "react-redux": "^5.0.6",
   "react-router": "^4.2.0",
   "react-router-dom": "^4.2.2",
@@ -58,6 +58,6 @@
   "restify": "^6.3.4",
   "supertest": "^3.0.0",
   "webpack": "^3.10.0",
-  "webpack-dev-server": "^2.9.7"
+  "webpack-dev-server": "^2.10.1"
  }
 }

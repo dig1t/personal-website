@@ -1,5 +1,5 @@
 import { createStore, applyMiddleware } from 'redux'
-import ReduxThunk from 'redux-thunk'
+import thunk from 'redux-thunk'
 
 import reducers from './reducers'
 
@@ -15,8 +15,8 @@ const logger = store => next => action => {
 	return result
 }
 
-export default (initialState) => createStore(
+export default initialState => createStore(
 	reducers,
 	initialState,
-	applyMiddleware(ReduxThunk, logger)
+	applyMiddleware(thunk, logger)
 )
