@@ -1,16 +1,17 @@
-import { FILTER_CHANGE } from '../constants/actionTypes.js'
-import { FILTER_ALL } from '../constants/filters.js'
+import { FILTER_UPDATE } from '../constants/actionTypes.js'
 
 const reducer = (state={
-  filter: FILTERS_ALL, // default filter
-  filterButtons: null, // filled by action
+  filter: null, // default filter
   filterTarget: null, // current filter button
-  modalTargetId: '', // id of project to view
-  modalOpen: false // closed by default
+	list: null
 }, action) => {
 	switch(action.type) {
-		case FILTER_CHANGE: {
-			return {...state, filter: action.filter}
+		case FILTER_UPDATE: {
+			return {
+				...state,
+				filter: action.payload.filter,
+				list: action.payload.list
+			}
 		}
 	}
 	

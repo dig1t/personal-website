@@ -1,20 +1,17 @@
-import { FILTER_CHANGE } from '../constants/actionTypes.js'
+import { FILTER_UPDATE } from '../constants/actionTypes.js'
+import { FILTER_ALL } from '../constants/filters.js'
 
-export const setFilter = filter => {
-	return function(dispatch) {
-		dispatch({
-			type: FILTER_CHANGE,
-			payload: 
+export const filterChange = filter => {
+	return (dispatch, getState) => {
+		// no point in changing filter to the same filter
+		if (getState().listFilters.filter !== filter) dispatch({
+			type: FILTER_UPDATE,
+			payload: {
+				filter,
+				list: getState().portfolio.data.filter(project => {
+					return project.type === filter || filter === FILTER_ALL
+				})
+			}
 		})
 	}
-}
-
-export const getFilterButtons = () => {
-	return Object.keys(filters).map(filter => {
-		const className = classNames({
-			active: this.state.filter === filters[filter]
-		})
-		
-		return <button key={filter} className={className} onClick={this.handleFilterClick.bind(this, filter)}>{filters[filter]}</button>
-	})
 }
