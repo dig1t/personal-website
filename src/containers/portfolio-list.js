@@ -6,7 +6,6 @@ import { bindActionCreators } from 'redux'
 import { click, closeModal } from '../actions/portfolio.js'
 
 class PortfolioContainer extends React.Component {
-	
 	render() {
 		return <div className="projects-grid">{
 			this.props.list.map(project => {

@@ -70,24 +70,20 @@ export class Contact extends React.Component {
 							<div className="col-12-ng">
 								<Input name="name" placeholder="Name" minlength="2" value={this.state.form.name}
 									validateFor="name"
-									onBlur={this.handleBlur}
 									onChange={this.handleInputChange} />
 							</div>
 							<div className="col-12-ng">
 								<Input type="email" name="email" placeholder="Email" value={this.state.form.email}
 									validateFor="email"
-									onBlur={this.handleBlur}
 									onChange={this.handleInputChange} />
 							</div>
 							<div className="col-12-ng">
 								<Input name="_subject" placeholder="Subject" value={this.state.form._subject}
 									validateFor="email"
-									onBlur={this.handleBlur}
 									onChange={this.handleInputChange} />
 							</div>
 							<div className="col-12-ng">
 								<Input type="textarea" name="message" placeholder="Message" minlength="1" value={this.state.form.message}
-									onBlur={this.handleBlur}
 									onChange={this.handleInputChange} />
 							</div>
 							<div className="col-12-ng">
