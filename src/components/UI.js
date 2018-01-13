@@ -10,11 +10,8 @@ class Burger extends React.Component {
 		open: PropTypes.element.bool
 	}
 	
-  constructor() {
-    super()
-    this.state = {
-      open: false
-    }
+	static state = {
+  	open: false
   }
   
   toggle() {
@@ -96,6 +93,7 @@ class Input extends React.Component {
 	}
 	
 	handleBlur(event) {
+		console.log(123, event)
 		const target = event.target
 		
 		let pass = false
@@ -118,9 +116,9 @@ class Input extends React.Component {
 	
 	el() {
 		return this.state.type === 'textarea' ? (
-			<textarea {...this.state.attributes} onBlur={this.handleBlur} />
+			<textarea {...this.state.attributes} onBlur={this.handleBlur.bind(this)} />
 		) : (
-			<input type={this.state.type} {...this.state.attributes} onBlur={this.handleBlur} />
+			<input type={this.state.type} {...this.state.attributes} onBlur={e => this.handleBlur.bind(e, this)} />
 		)
 	}
 	

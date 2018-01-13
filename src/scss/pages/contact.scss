@@ -11,6 +11,7 @@ $border-size: 2px;
 	
 	input, textarea, button {
 		background-color: transparent;
+		margin-bottom: 20px;
 		border: 0;
 		border-bottom: $border-size solid $black;
 		border-radius: 0;
