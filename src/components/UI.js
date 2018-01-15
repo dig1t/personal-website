@@ -116,9 +116,9 @@ class Input extends React.Component {
 	
 	el() {
 		return this.state.type === 'textarea' ? (
-			<textarea {...this.state.attributes} onBlur={this.handleBlur.bind(this)} />
+			<textarea {...this.state.attributes} onBlur={this.handleBlur} />
 		) : (
-			<input type={this.state.type} {...this.state.attributes} onBlur={e => this.handleBlur.bind(e, this)} />
+			<input type={this.state.type} {...this.state.attributes} onBlur={this.handleBlur.bind(this)} />
 		)
 	}
 	
