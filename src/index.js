@@ -4,11 +4,11 @@ import { Provider } from 'react-redux'
 import { Router } from 'react-router'
 import { createBrowserHistory } from 'history'
 
-const history = createBrowserHistory()
 import configureStore from './store'
 
 import Root from './components/Root'
 
+const history = createBrowserHistory()
 const store = configureStore(
 	typeof window !== 'undefined' && (window.__INITIAL_STATE__ || {})
 )

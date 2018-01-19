@@ -6,6 +6,7 @@ import Portfolio from './Portfolio'
 import { Store } from './Store'
 import { Gallery } from './Gallery'
 import { Contact } from './Contact'
+import { ContactRedirect } from './ContactRedirect'
 import { Error } from './Error'
 
 const Routes = () => (
@@ -15,6 +16,7 @@ const Routes = () => (
 		<Route exact path="/store" component={Store} />
 		<Route exact path="/gallery" component={Gallery} />
 		<Route exact path="/contact" component={Contact} />
+		<Route exact path="/thanks" component={ContactRedirect} />
 		<Route component={Error} />
 	</Switch>
 )
