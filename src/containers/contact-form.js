@@ -36,7 +36,7 @@ class Input extends React.Component {
 				case 'email': {
 					// very basic, validate by sending email confirmation
 					valid = /.+\@.+\..+/.test(value)
-					text = `${this.props.inputName} is not a valid email`
+					text = `Not a valid email address`
 					break
 				}
 				
