@@ -61,14 +61,22 @@ $border-size: 2px;
 	button {
 		color: $white;
 		width: auto;
-		background-color: $black;
 		border: 0;
 		padding: 12px 30px;
 		font-weight: 800;
 		transition: .1s ease-in-out;
 		
-		&:hover {
+		&:disabled {
+			color: $gray;
+			background-color: #c5c5c5;
+		}
+		
+		&:not(:disabled) {
 			background-color: $theme-color;
+			
+			&:hover {
+				background-color: $black;
+			}
 		}
 	}
 	

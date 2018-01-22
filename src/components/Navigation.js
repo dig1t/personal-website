@@ -7,7 +7,6 @@ const links = [
 	// [path, name]
 	['/', 'Home'],
 	['/portfolio', 'Portfolio'],
-	//['/store', 'Store'],
 	['/contact', 'Contact']
 ]
 

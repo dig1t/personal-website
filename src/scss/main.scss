@@ -31,7 +31,7 @@ main {
 	padding-top: 0;
 	
 	.content {
-		background-color: $gray;
+		background-color: $light-gray;
 		height: calc(100% - 70px);
 		overflow-x: hidden;
 		overflow-y: auto;
@@ -90,12 +90,13 @@ nav {
 }
 
 .error-page {
+	flex-direction: column;
+	justify-content: center;
+	
 	.text {
 		background-image: radial-gradient(at 50% 80%, #47c2eb 0, #3df58a 100%);
-		margin: auto;
 		font-size: 30em;
 		font-weight: 900;
-		text-align: center;
 		line-height: 1em;
 		letter-spacing: -.04em;
 		-webkit-background-clip: text;
