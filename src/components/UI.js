@@ -23,11 +23,6 @@ class Burger extends React.Component {
 }
 
 class Modal extends React.Component {
-	static defaultProps = {
-		open: false,
-		title: ''
-	}
-	
 	constructor(props) {
 		super(props)
 		this.state = props
@@ -37,25 +32,49 @@ class Modal extends React.Component {
 		this.setState({open: newProps.open})
 	}
 	
+	getHeader() {
+		let show = false
+		
+		return show ? (<div className="header">{this.props.title}</div>) : null
+	}
+	
+	getFooter() {
+		let show = false
+		
+		switch(this.props.type) {
+			case 'image': {
+				show = true
+				break
+			}
+		}
+		
+		return show ? (<div className="footer">
+			<div className="heading">{this.props.title}</div>
+			<p>{this.props.description}</p>
+		</div>) : null
+	}
+	
 	modalComponent() {
 		let content = this.props.children
 		
 		switch(this.props.type) {
-			case 'image':
+			case 'image': {
 				content = <img src={this.props.image} alt={this.props.imgAlt} />
 				break
+			}
 		}
 		
 		const className = classNames('modal', this.props.type)
 		
 		return !this.state.open ? null : (<div className={className}>
+			<div className="background-close" onClick={this.props.toggleModal} />
+			<button className="close fas fa-times" onClick={this.props.toggleModal} />
 			<div className="align">
-				<div className="background-close" onClick={this.props.toggleModal} />
 				<div className="container">
-					<button className="close fas fa-times" onClick={this.props.toggleModal} />
 					<div className="main">
-						<div className="header">{this.props.title}</div>
+						{ this.getHeader() }
 						<div className="content">{content}</div>
+						{ this.getFooter() }
 					</div>
 				</div>
 			</div>
@@ -69,6 +88,14 @@ class Modal extends React.Component {
 			document.getElementById('modal-root')
 		) : null
 	}
+}
+
+Modal.defaultProps = {
+	open: false
+}
+
+Modal.propTypes = {
+	open: PropTypes.bool.isRequired
 }
 
 export {

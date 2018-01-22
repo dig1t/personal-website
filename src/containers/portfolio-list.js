@@ -9,22 +9,22 @@ class PortfolioContainer extends React.Component {
 	render() {
 		return <div className="projects-grid">{
 			this.props.list.map(project => {
-				return [
-					<div key={project.id} className="project" onClick={this.props.click.bind(null, project.id)}>
+				return <React.Fragment key={project.id}>
+					<div className="project" onClick={this.props.click.bind(null, project.id)}>
 						<img src={project.thumbnail || project.image} />
 						<div className="name">
 							<h2>{project.name}</h2>
 						</div>
-					</div>,
+					</div>
 					<Modal
-						key={project.id + '-modal'}
 						title={project.name}
+						description={project.description}
 						type="image"
 						image={project.thumbnail || project.image}
 						toggleModal={this.props.closeModal}
 						open={this.props.modalTargetId === project.id && this.props.modalOpen}
 					/>
-				]
+				</React.Fragment>
 			})
 		}</div>
 	}
