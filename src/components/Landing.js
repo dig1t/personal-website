@@ -5,11 +5,7 @@ import Layout from './Layout'
 export class Landing extends React.Component {
 	renderComponent() {
 		return <section className="landing">
-			<div className="background">
-				<div className="hero" />
-				<div className="overlay" />
-				<div className="broken-pattern" />
-			</div>
+			<div className="background" />
 			<div className="stripes">
 				<div className="tr" />
 				<div className="bl" />

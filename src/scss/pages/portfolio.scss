@@ -1,3 +1,6 @@
+//responsive
+// make heading margin smaller
+
 .portfolio {
 	img {
 		width: 100%;
@@ -84,7 +87,8 @@
 				bottom: -100px;
 				transition: .1s ease-in-out;
 				
-				h2 {
+				h3 {
+					font-weight: 600;
 					line-height: .9em;
 				}
 				
@@ -106,9 +110,9 @@
 				&:before {
 					content: '';
 					background-image: linear-gradient(
-						transparentize($blue, .9) 0%,
-						transparentize($blue, .7) 75%,
-						transparentize($blue, .4) 100%
+						transparentize($blue, 1) 0%,
+						transparentize($blue, .8) 75%,
+						transparentize($blue, .6) 100%
 					);
 					position: absolute;
 					top: 0;
