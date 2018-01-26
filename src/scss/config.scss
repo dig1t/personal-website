@@ -15,8 +15,16 @@ $letter-spacing: .08em;
 $border-radius: 4px;
 
 $type-scale: ();
-$type-scale-ratio: 1.618; // golden
+$type-scale-ratio: 1.618; // fibonacci
 $type-scale-base: $base-font-size;
+
+//15      ts(0)
+//24.27   ts(1)
+//39.26   ts(2)
+//63.53   ts(3)
+//102.8   ts(4)
+//166.33  ts(5)
+//269.13  ts(6)
 
 @function type-scale($steps) {
 	@if $steps == 0 {

@@ -2,6 +2,7 @@ import React from 'react'
 import Layout from './Layout'
 
 import ContactContainer from '../containers/contact-form'
+import SocialLinksContainer from '../containers/social-media'
 
 const links = [
 	{
@@ -24,13 +25,7 @@ export class Contact extends React.Component {
 			<div className="row-ng align-wrap">
 				<div className="col-6-ng">
 					<ContactContainer />
-					<ul className="links">
-						{links.map((link) => {
-							return <li key={link.service}>
-								<a className={"fab fa-" + link.service} href={link.url} target="_blank" data-service={link.service}></a>
-							</li>
-						})}
-					</ul>
+					<SocialLinksContainer />
 				</div>
 				<div className="col-6-ng image">
 					<i />

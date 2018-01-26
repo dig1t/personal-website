@@ -13,7 +13,7 @@ class PortfolioContainer extends React.Component {
 					<div className="project" onClick={this.props.click.bind(null, project.id)}>
 						<img src={project.thumbnail || project.image} />
 						<div className="name">
-							<h2>{project.name}</h2>
+							<h3>{project.name}</h3>
 						</div>
 					</div>
 					<Modal
