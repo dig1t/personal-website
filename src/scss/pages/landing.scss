@@ -3,203 +3,206 @@ main .content > section.landing {
 	overflow: hidden;
 }
 
-.landing .background {
-	background: url(/assets/i/noise.png), url(/assets/i/landing-hero.png) center/cover;
-	width: 100%;
-	height: 100%;
-	position: absolute;
-}
-
 .landing {
-	height: 100%;
-	
-	ui.hamburger {
-		background-color: #fff;
-		border-radius: 100%;
-		position: absolute;
-		top: 80px;
-		left: 80px;
-		transition: transform .2s ease-in-out;
-		
-		&:hover {
-			background-color: darken(#fff, 10%);
-			box-shadow: 2px 2px 4px rgba(0, 0, 0, .2);
-		}
+	.heading {
+		line-height: 1em;
 	}
 	
-	> .wrap {
-		width: 80%;
+	section.hero {
 		height: 100%;
-		margin: auto;
-		position: relative;
 		
-		@include breakpoint(tablet-large) {
-			& {
-				width: 90%;
-			}
-		}
-	}
-	
-	.stripes {
-		background: repeating-linear-gradient(
-			-45deg,
-			$purple,
-			$purple 15px,
-			transparent 15px,
-			transparent 45px
-		);
-		width: 280px;
-		height: 40%;
-		position: absolute;
-		left: calc(10% - 15px);
-		top: calc(50% - 20%);
-		z-index: 1;
-		
-		.tr, .bl {
-			background-image: url(/assets/i/landing-spritesheet.svg);
-			background-size: 100px 200px;
-			width: 100px;
-			height: 100px;
+		.background {
+			background: url(/assets/i/noise.png), url(/assets/i/landing-hero.png) center/cover;
+			width: 100%;
+			height: 100%;
 			position: absolute;
 		}
 		
-		.tr {
-			top: -30px;
-			right: -20px;
-		}
-		
-		.bl {
-			background-position-y: 100px;
-			bottom: -30px;
-			left: -20px;
-		}
-		
-		@include breakpoint(tablet-large) {
-			& {
-				left: calc(5% - 15px);
-			}
-		}
-	}
-	
-	.name {
-		position: relative;
-		z-index: 2;
-		
-		h1 {
-			padding: 10px 16px;
-			font-size: 8em;
-			font-weight: 900;
-			line-height: .8em;
+		> .wrap {
+			width: 80%;
+			height: 100%;
+			margin: auto;
 			position: relative;
-			z-index: 3; // place h1 over .title
-		}
-		
-		.title {
-			color: #fff;
-			font-size: 3.1em;
-			font-style: italic;
-			font-weight: 300;
-			line-height: 1.2em;
-			position: relative;
-			top: -20px;
-			z-index: 2;
 			
-			> * {
-				background-color: $theme-color;
-				padding: 10px 16px;
-				display: table;
-				
-				&:nth-child(2) {
-					margin-top: -10px;
+			@include breakpoint(tablet-large) {
+				& {
+					width: 90%;
 				}
 			}
 		}
-	}
-	
-	.page {
-		position: absolute;
-		right: 0;
-		bottom: 55px;
 		
-		.number {
-			color: $theme-color;
-			font-size: type-scale(5);
-			font-weight: 600;
-			letter-spacing: -.06em;
-			line-height: 1;
-			position: relative;
-			bottom: -18px;
-		}
-		
-		.text { // -35 px offset
-			color: $white;
-			font-size: type-scale(2);
-			font-style: italic;
-			font-weight: 200;
-			text-shadow: 2px 2px 8px $black;
-			line-height: 1;
+		.stripes {
+			background: repeating-linear-gradient(
+				-45deg,
+				$purple,
+				$purple 15px,
+				transparent 15px,
+				transparent 45px
+			);
+			width: 280px;
+			height: 40%;
 			position: absolute;
-			right: 35px;
-			bottom: 0;
-		}
-		
-		@include breakpoint(tablet-large) {
-			.number {
-				font-size: type-scale(4);
-				bottom: -10px;
+			left: calc(10% - 15px);
+			top: calc(50% - 20%);
+			z-index: 1;
+			
+			.tr, .bl {
+				background-image: url(/assets/i/landing-spritesheet.svg);
+				background-size: 100px 200px;
+				width: 100px;
+				height: 100px;
+				position: absolute;
 			}
 			
-			.text {
-				font-size: 3em;
+			.tr {
+				top: -30px;
+				right: -20px;
+			}
+			
+			.bl {
+				background-position-y: 100px;
+				bottom: -30px;
+				left: -20px;
+			}
+			
+			@include breakpoint(tablet-large) {
+				& {
+					left: calc(5% - 15px);
+				}
 			}
 		}
-	}
-	
-	.nav-btn {
-		$nav-btn-size: 150px;
 		
-		position: relative;
-		
-		a {
-			color: $black;
-			background-color: #fff;
-			width: $nav-btn-size;
-			padding: 15px;
-			padding-right: 35px;
+		.name {
 			position: relative;
-			font-size: 1.6em;
-			font-weight: 900;
-			text-transform: uppercase;
-			letter-spacing: $letter-spacing;
-			line-height: 1.1em;
 			z-index: 2;
 			
-			&:after {
-				content: '';
-				background-image: url(/assets/i/chevron-right.svg);
-				background-position: center;
-				background-repeat: no-repeat;
-				width: 24px;
-				position: absolute;
-				top: 0;
-				bottom: 0;
-				right: 8px;
+			h1 {
+				padding: 10px 16px;
+				font-size: 8em;
+				font-weight: 900;
+				line-height: .8em;
+				position: relative;
+				z-index: 3; // place h1 over .title
+			}
+			
+			.title {
+				color: #fff;
+				font-size: 3.1em;
+				font-style: italic;
+				font-weight: 300;
+				line-height: 1.2em;
+				position: relative;
+				top: -20px;
+				z-index: 2;
+				
+				> * {
+					background-color: $theme-color;
+					padding: 10px 16px;
+					display: table;
+					
+					&:nth-child(2) {
+						margin-top: -10px;
+					}
+				}
 			}
 		}
 		
-		&:before {
-			content: '';
-			width: $nav-btn-size;
-			height: 100%;
-			border: 4px solid $theme-color;
+		.page {
 			position: absolute;
-			top: -12px;
-			right: 33px;
-			z-index: 1;
+			right: 0;
+			bottom: 55px;
+			
+			.number--big {
+				color: $theme-color;
+				font-size: type-scale(5);
+				font-weight: 600;
+				letter-spacing: -.06em;
+				line-height: 1;
+				position: relative;
+				bottom: -18px;
+			}
+			
+			.text { // -35 px offset
+				color: $white;
+				font-size: type-scale(2);
+				font-style: italic;
+				font-weight: 200;
+				text-shadow: 2px 2px 8px $black;
+				line-height: 1;
+				position: absolute;
+				right: 35px;
+				bottom: 0;
+			}
+			
+			@include breakpoint(tablet-large) {
+				.number {
+					font-size: type-scale(4);
+					bottom: -10px;
+				}
+				
+				.text {
+					font-size: 3em;
+				}
+			}
 		}
 		
-		a, &:before {
-			float: right;
+		.nav-btn {
+			$nav-btn-size: 150px;
+			
+			position: relative;
+			
+			a {
+				color: $black;
+				background-color: #fff;
+				width: $nav-btn-size;
+				padding: 15px;
+				padding-right: 35px;
+				position: relative;
+				font-size: 1.6em;
+				font-weight: 900;
+				text-transform: uppercase;
+				letter-spacing: $letter-spacing;
+				line-height: 1.1em;
+				z-index: 2;
+				
+				&:after {
+					content: '';
+					background-image: url(/assets/i/chevron-right.svg);
+					background-position: center;
+					background-repeat: no-repeat;
+					width: 24px;
+					position: absolute;
+					top: 0;
+					bottom: 0;
+					right: 8px;
+				}
+			}
+			
+			&:before {
+				content: '';
+				width: $nav-btn-size;
+				height: 100%;
+				border: 4px solid $theme-color;
+				position: absolute;
+				top: -12px;
+				right: 18px;
+				z-index: 1;
+			}
+			
+			a, &:before {
+				float: right;
+			}
+		}
+	}
+	
+	section.featured {
+		.list {
+			column-count: 3;
+			column-gap: 15px;
+			
+			img {
+				width: 100%;
+			}
 		}
 	}
 }

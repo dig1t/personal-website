@@ -11,13 +11,13 @@ class Portfolio extends React.Component {
 	renderComponent() {
 		return <section className="portfolio">
 			<div className="wrap">
-				<div className="heading row">
-					<div className="col-6">
-						<h1>Portfolio</h1>
+				<div className="heading row-ng">
+					<div className="col-6-ng">
+						<h1 className="heading--serif">Portfolio</h1>
 						<p>Here is a list of projects I have worked on.</p>
 					</div>
-					<div className="col-6">
-						<div className="page">02</div>
+					<div className="col-6-ng">
+						<div className="number">02</div>
 					</div>
 				</div>
 				
