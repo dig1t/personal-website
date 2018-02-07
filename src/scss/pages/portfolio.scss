@@ -2,6 +2,8 @@
 // make heading margin smaller
 
 .portfolio {
+	background: fixed img('portfolio-list-background.png') center 70px no-repeat;
+	
 	img {
 		width: 100%;
 	}
@@ -19,8 +21,15 @@
 			letter-spacing: .03em;
 		}
 		
-		h1, p {
+		.number {
+			float: right;
+		}
+		
+		h1, p, .number {
+			background-color: $light-gray;
+			padding: 8px;
 			line-height: 1; // same height as the text
+			display: table;
 		}
 	}
 	
@@ -29,24 +38,21 @@
 		text-align: center;
 		
 		button {
-			color: lighten($black, 50%);
-			background-color: transparent;
+			color: $black;
+			background-color: $white;
 			margin: 0 8px;
-			border: 1px solid lighten($black, 50%);
 			padding: 10px 16px;
 			font-size: type-scale(0);
 			font-weight: 400;
 			transition: .1s ease-in-out;
 			
 			&:hover {
-				color: $black;
-				border-color: $black;
+				color: lighten($black, 50%);
 			}
 			
 			&.active {
 				color: $white;
 				background-color: $black;
-				border-color: $black;
 				font-weight: bold;
 			}
 		}

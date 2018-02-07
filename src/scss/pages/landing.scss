@@ -4,7 +4,8 @@ main .content > section.landing {
 }
 
 .landing {
-	.heading {
+	.heading--serif {
+		color: $dark-gray;
 		line-height: 1em;
 	}
 	
@@ -192,6 +193,46 @@ main .content > section.landing {
 			a, &:before {
 				float: right;
 			}
+		}
+	}
+	
+	section.about {
+		.wrap {
+			display: grid;
+			grid-column-gap: 15px;
+			grid-template-areas: 'heading text' 'number text';
+			grid-template-columns: 1fr 1fr;
+		}
+		
+		.heading--serif {
+			text-align: right;
+			grid-area: heading;
+		}
+		
+		.number {
+			grid-area: number;
+		}
+		
+		p {
+			color: $gray;
+			font-size: type-scale(1);
+			grid-area: text;
+			position: relative;
+			
+			&:before {
+				content: '';
+				background-color: $theme-color;
+				width: 2px;
+				height: 100%;
+				position: absolute;
+				left: -7.5px;
+			}
+		}
+		
+		.brush-stroke {
+			background: url(/assets/i/blue-brush-stroke.png) no-repeat;
+			width: 350px;
+			height: 255px;
 		}
 	}
 	
