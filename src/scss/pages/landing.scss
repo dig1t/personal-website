@@ -197,11 +197,29 @@ main .content > section.landing {
 	}
 	
 	section.about {
+		padding: 120px 0;
+		
 		.wrap {
+			height: 240px;
 			display: grid;
-			grid-column-gap: 15px;
+			grid-column-gap: 48px;
 			grid-template-areas: 'heading text' 'number text';
 			grid-template-columns: 1fr 1fr;
+			
+			> * {
+				position: relative;
+			}
+			
+			&:before {
+				content: '';
+				background: url(/assets/i/blue-brush-stroke.png) center/contain no-repeat;
+				width: 340px;
+				height: 108px;
+				position: absolute;
+				top: calc(50% - 54px);
+				left: calc(50% - 277px);
+				transform: rotate(-30deg);
+			}
 		}
 		
 		.heading--serif {
@@ -210,12 +228,20 @@ main .content > section.landing {
 		}
 		
 		.number {
+			position: relative;
 			grid-area: number;
+			
+			span {
+				line-height: 1em;
+				position: absolute;
+				bottom: 0;
+				right: 0;
+			}
 		}
 		
 		p {
 			color: $gray;
-			font-size: type-scale(1);
+			font-size: 1.8em;
 			grid-area: text;
 			position: relative;
 			
@@ -225,14 +251,8 @@ main .content > section.landing {
 				width: 2px;
 				height: 100%;
 				position: absolute;
-				left: -7.5px;
+				left: -24px;
 			}
-		}
-		
-		.brush-stroke {
-			background: url(/assets/i/blue-brush-stroke.png) no-repeat;
-			width: 350px;
-			height: 255px;
 		}
 	}
 	

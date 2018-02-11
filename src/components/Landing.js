@@ -62,7 +62,9 @@ export class Landing extends React.Component {
 			<section className="row-ng about">
 				<div className="col-10-ng col-offset-1 wrap">
 					<h1 className="heading--serif">About Me</h1>
-					<div className="number">02</div>
+					<div className="number">
+						<span>02</span>
+					</div>
 					<p>{aboutMe}</p>
 				</div>
 			</section>
