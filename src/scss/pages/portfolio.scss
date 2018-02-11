@@ -2,7 +2,7 @@
 // make heading margin smaller
 
 .portfolio {
-	background: fixed img('portfolio-list-background.png') center 70px no-repeat;
+	background: url(/assets/i/portfolio-list-background.png) center top no-repeat;
 	
 	img {
 		width: 100%;
@@ -58,11 +58,15 @@
 		}
 	}
 	
+	$gap: 15px;
+	
 	.projects-grid {
 		column-count: 3;
-		column-gap: 0;
+		column-gap: $gap;
+		margin-bottom: 60px;
 		
 		.project {
+			margin-bottom: $gap;
 			position: relative;
 			cursor: pointer;
 			overflow: hidden;
