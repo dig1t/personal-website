@@ -41,10 +41,10 @@ main .content > section.landing {
 				transparent 45px
 			);
 			width: 280px;
-			height: 40%;
+			height: 355px;
 			position: absolute;
-			left: calc(10% - 15px);
-			top: calc(50% - 20%);
+			left: calc(25% - 140px - 15px);
+			top: calc(50% - 177.5px);
 			z-index: 1;
 			
 			.tr, .bl {
@@ -231,7 +231,17 @@ main .content > section.landing {
 			position: relative;
 			grid-area: number;
 			
+			&:before {
+				content: '';
+				background-color: $theme-color;
+				width: 1px;
+				height: 100%;
+				position: absolute;
+				right: 0;
+			}
+			
 			span {
+				margin-right: 42px;
 				line-height: 1em;
 				position: absolute;
 				bottom: 0;
@@ -244,15 +254,6 @@ main .content > section.landing {
 			font-size: 1.8em;
 			grid-area: text;
 			position: relative;
-			
-			&:before {
-				content: '';
-				background-color: $theme-color;
-				width: 2px;
-				height: 100%;
-				position: absolute;
-				left: -24px;
-			}
 		}
 	}
 	

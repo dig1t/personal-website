@@ -31,11 +31,11 @@ export class Landing extends React.Component {
 		return <React.Fragment>
 			<section className="hero">
 				<div className="background" />
-				<div className="stripes">
-					<div className="tr" />
-					<div className="bl" />
-				</div>
 				<div className="wrap">
+					<div className="stripes">
+						<div className="tr" />
+						<div className="bl" />
+					</div>
 					<div className="row-ng align-wrap">
 						<div className="col-6-ng name">
 							<h1>
