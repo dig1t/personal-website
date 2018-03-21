@@ -1,15 +1,15 @@
 {
 	"port": 8000,
-	"name": "title",
+	"name": "Javier Mejia",
 	"seo": {
-		"title": "title",
-		"description": "desc"
+		"title": "Javier Mejia",
+		"description": "Web Developer & UI Designer"
 	},
 	"sql": {
 		"type": "mysql",
 		"host": "127.0.0.1",
 		"user": "root",
 		"password": "9CsrwKCCshdnsFKf",
-		"database": "music"
+		"database": "portfolio"
 	}
 }

@@ -9,7 +9,175 @@ main .content > section.landing {
 		line-height: 1em;
 	}
 	
+	.grid {
+		$border: 1px solid rgba(0, 0, 0, .1);
+		
+		width: 80%;
+		height: 100%;
+		position: absolute;
+		left: 10%;
+		z-index: 999999999;
+		
+		.col-2 {
+			height: 100%;
+			border-right: $border;
+			
+			&:nth-child(1) {
+				border-left: $border;
+			}
+		}
+	}
+	
 	section.hero {
+		$bg-blue: #546dfd;
+		$bg-orange: #f1bb5c;
+		
+		background-color: $bg-blue;
+		height: 100%;
+		
+		.background {
+			background: url(/assets/i/noise.png);
+			width: 100%;
+			height: 100%;
+			position: absolute;
+		}
+		
+		> .wrap {
+			width: 80%;
+			height: 100%;
+			margin: auto;
+			position: relative;
+			
+			@include breakpoint(tablet-large) {
+				& {
+					width: 90%;
+				}
+			}
+		}
+		
+		.name {
+			color: $white;
+			position: relative;
+			z-index: 2;
+			
+			h1 {
+				padding: 10px 16px;
+				font: 600 8em/1em "PT Serif";
+		    letter-spacing: .03em;
+				position: relative;
+				z-index: 3; // place h1 over .title
+			}
+			
+			.title {
+				font-size: 3.1em;
+				font-style: italic;
+				font-weight: 300;
+				line-height: 1.2em;
+				position: relative;
+				top: -20px;
+				z-index: 2;
+				
+				> * {
+					background-color: $theme-color;
+					padding: 10px 16px;
+					display: table;
+					
+					&:nth-child(2) {
+						margin-top: -10px;
+					}
+				}
+			}
+		}
+		
+		.page {
+			position: absolute;
+			right: 0;
+			bottom: 55px;
+			
+			.number--big {
+				color: $white;
+				font-size: type-scale(5);
+				font-weight: 600;
+				letter-spacing: -.06em;
+				line-height: 1;
+				position: relative;
+				bottom: -18px;
+			}
+			
+			.text { // -35 px offset
+				color: $white;
+				font-size: type-scale(2);
+				font-style: italic;
+				font-weight: 200;
+				text-shadow: 2px 2px 8px $black;
+				line-height: 1;
+				position: absolute;
+				right: 35px;
+				bottom: 0;
+			}
+			
+			@include breakpoint(tablet-large) {
+				.number {
+					font-size: type-scale(4);
+					bottom: -10px;
+				}
+				
+				.text {
+					font-size: 3em;
+				}
+			}
+		}
+		
+		.nav-btn {
+			$nav-btn-size: 150px;
+			
+			position: relative;
+			
+			a {
+				color: $black;
+				background-color: #fff;
+				width: $nav-btn-size;
+				padding: 15px;
+				padding-right: 35px;
+				position: relative;
+				font-size: 1.6em;
+				font-weight: 900;
+				text-transform: uppercase;
+				letter-spacing: $letter-spacing;
+				line-height: 1.1em;
+				z-index: 2;
+				
+				&:after {
+					content: '';
+					background-image: url(/assets/i/chevron-right.svg);
+					background-position: center;
+					background-repeat: no-repeat;
+					width: 24px;
+					position: absolute;
+					top: 0;
+					bottom: 0;
+					right: 8px;
+				}
+			}
+			
+			&:before {
+				content: '';
+				width: $nav-btn-size;
+				height: 100%;
+				border: 4px solid $theme-color;
+				position: absolute;
+				top: -12px;
+				left: -18px;
+				z-index: 1;
+			}
+			
+			a, &:before {
+				float: left;
+			}
+		}
+	}
+	
+	section.hero213 {
 		height: 100%;
 		
 		.background {
@@ -43,7 +211,7 @@ main .content > section.landing {
 			width: 280px;
 			height: 355px;
 			position: absolute;
-			left: calc(25% - 140px - 15px);
+			left: -15px;
 			top: calc(50% - 177.5px);
 			z-index: 1;
 			
@@ -68,7 +236,7 @@ main .content > section.landing {
 			
 			@include breakpoint(tablet-large) {
 				& {
-					left: calc(5% - 15px);
+					// TEMP
 				}
 			}
 		}
@@ -76,6 +244,10 @@ main .content > section.landing {
 		.name {
 			position: relative;
 			z-index: 2;
+			
+			h1, .title {
+				
+			}
 			
 			h1 {
 				padding: 10px 16px;
