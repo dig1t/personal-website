@@ -29,13 +29,15 @@ const featuredProjects = [
 export class Landing extends React.Component {
 	renderComponent() {
 		return <React.Fragment>
+			<div className="background" />
 			<div className="grid">
-				<div className="col-2" />
-				<div className="col-2" />
-				<div className="col-2" />
-				<div className="col-2" />
-				<div className="col-2" />
-				<div className="col-2" />
+				<div className="column" />
+				<div className="column" />
+				<div className="column" />
+				<div className="column" />
+				<div className="column" />
+				<div className="column" />
+				<div className="column" />
 			</div>
 			<section className="hero">
 				<div className="stripe" />
