@@ -8,6 +8,11 @@
 @import 'pages/contact';
 @import 'pages/contact-redirect';
 
+::selection {
+	color: $white;
+	background-color: transparentize($black, .4);
+}
+
 body {
 	color: $black;
 	background-color: $white;
