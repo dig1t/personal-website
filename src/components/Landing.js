@@ -40,15 +40,15 @@ export class Landing extends React.Component {
 				<div className="column" />
 			</div>
 			<section className="hero">
-				<div className="stripe" />
 				<div className="wrap">
+					<div className="stripe col-offset-8" />
 					<div className="row-ng align-wrap">
 						<div className="col-4-ng col-offset-2 name">
-							<div className="stripes">
-								<div className="tr" />
-								<div className="bl" />
-							</div>
 							<div className="wrap">
+								<svg className="shape" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" style={{'enable-background': 'new 0 0 600 600'}}>
+									<polygon points="125.4,79.9 524,171 546.6,521.5 53,483 "/>
+								</svg>
+								<div className="page">01</div>
 								<h1>
 									<div>Javier</div>
 									<div>Mejia</div>
@@ -61,44 +61,6 @@ export class Landing extends React.Component {
 						</div>
 						<div className="col-3-ng col-offset-3 nav-btn">
 							<Link to="/portfolio">View Portfolio</Link>
-						</div>
-					</div>
-					<div className="page row-ng">
-						<div className="col-12-ng">
-							<span className="number--big">01</span>
-							<span className="text">Welcome</span>
-						</div>
-					</div>
-				</div>
-			</section>
-			<section className="hero-old">
-				<div className="background" />
-				<div className="wrap">
-					<div className="row-ng align-wrap">
-						<div className="col-6-ng name">
-							<div className="stripes">
-								<div className="tr" />
-								<div className="bl" />
-							</div>
-							<div className="wrap">
-								<h1>
-									<div>Javier</div>
-									<div>Mejia</div>
-								</h1>
-								<div className="title">
-									<div>Web Developer</div>
-									<div>UI Designer</div>
-								</div>
-							</div>
-						</div>
-						<div className="col-6-ng nav-btn">
-							<Link to="/portfolio">View Portfolio</Link>
-						</div>
-					</div>
-					<div className="page row-ng">
-						<div className="col-12-ng">
-							<span className="number--big">01</span>
-							<span className="text">Welcome</span>
 						</div>
 					</div>
 				</div>
