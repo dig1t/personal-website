@@ -45,8 +45,8 @@ export class Landing extends React.Component {
 					<div className="row-ng align-wrap">
 						<div className="col-4-ng col-offset-2 name">
 							<div className="wrap">
-								<svg className="shape" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" style={{'enable-background': 'new 0 0 600 600'}}>
-									<polygon points="125.4,79.9 524,171 546.6,521.5 53,483 "/>
+								<svg className="shape" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 440">
+									<polygon points="73.2,0.7 476.9,91.5 499.8,440.7 -0.2,402.4 " />
 								</svg>
 								<div className="page">01</div>
 								<h1>
@@ -75,11 +75,11 @@ export class Landing extends React.Component {
 				</div>
 			</section>
 			<section className="row-ng featured">
-				<div className="col-8-ng col-offset-1">
+				<div className="col-9-ng col-offset-1">
 					<h1 className="heading heading--serif">Portfolio</h1>
 				</div>
 				<div className="col col-2-ng number heading">03</div>
-				<div className="col-10-ng col-offset-1">
+				<div className="col-12-ng">
 					<div className="list">{featuredProjects.map(project => (
 						<div key={project.id} className="project">
 							<img src={project.img} />

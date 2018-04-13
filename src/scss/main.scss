@@ -42,9 +42,11 @@ main {
 		overflow-y: auto;
 		position: relative;
 		
-		> section {
+		> section:not(.hero) {
+			width: 80%;
+			margin: auto;
 			position: relative;
-			//overflow-y: auto;
+			z-index: 1;
 			
 			&, > .row {
 				//min-height: 100%;

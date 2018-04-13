@@ -4,6 +4,11 @@ import Navigation from './Navigation'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
 
+// TODO: scrollbar
+// TODO: 100 / (400/100)
+// TODO: div_height / (div_total_height/div_height)
+// TODO: calc scrollbar track height
+
 class Burger extends React.Component {
 	static propTypes = {
 		open: PropTypes.element.bool
