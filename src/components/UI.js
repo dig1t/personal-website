@@ -103,7 +103,46 @@ Modal.propTypes = {
 	open: PropTypes.bool.isRequired
 }
 
+class Scrollbar extends React.Component {
+	render() {
+		return <div className="scroll__track">
+			<div className="scroll__slider" />
+		</div>
+	}
+}
+
+class ScrollContainer extends React.Component {
+	constructor(props) {
+		super(props)
+		this.state = props
+	}
+	
+	handleScroll() {
+		
+	}
+	
+	componentDidMount() {
+		document.addEventListener('scroll', this.handleScroll)
+	}
+	
+	componentWillUnmount() {
+		document.removeEventListener('scroll', this.handleScroll)
+	}
+	
+	render() {
+		const style = {
+			overflow: 'hidden!important'
+		}
+		
+		return <div className={this.props.className} style={style}>
+			{ this.props.children }
+			<Scrollbar />
+		</div>
+	}
+}
+
 export {
 	Burger,
-	Modal
+	Modal,
+	ScrollContainer
 }

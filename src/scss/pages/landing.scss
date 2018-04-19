@@ -23,7 +23,7 @@ main .content > section.landing {
 		width: calc(80% - 50px);
 		height: 100%;
 		position: fixed;
-		left: calc(10% + 25px - 6px); // 10% + 25px main element padding - half size of scrollbar
+		left: calc(10% + 25px - 6px);
 		z-index: 1;
 		
 		.column {
