@@ -109,34 +109,34 @@ class ScrollContainer extends React.Component {
 		this.state = props
 	}
 	
-	getTrack() {
-		return <div className="scroll__track" />
-	}
-	
-	getSlider() {
-		return <div className="scroll__slider" />
-	}
-	
 	handleScroll() {
 		console.log('scroll')
 	}
 	
+	handleReceive(e) {
+		console.log(e.data, e.func)
+	}
+	
 	componentDidMount() {
-		document.addEventListener('scroll', this.handleScroll.bind(this))
+		console.log('mounting')
+		window.addEventListener('message', this.handleReceive, false)
+		//this.container.addEventListener('scroll', this.handleScroll.bind(this))
 	}
 	
 	componentWillUnmount() {
-		document.removeEventListener('scroll', this.handleScroll)
+		//this.container.removeEventListener('scroll', this.handleScroll)
 	}
 	
 	render() {
-		const style = {
-			overflow: 'hidden!important'
-		}
-		
-		return <div className={this.props.className} style={style}>
-			{ this.props.children }
-			<Scrollbar />
+		return <div className={this.props.className} ref={(ref) => this.container = ref}>
+			<div className="scroll__view" onScroll={this.handleScroll.bind(this)} ref={(ref) => this.content = ref}>
+				<div className="scroll__content">
+					{ this.props.children }
+				</div>
+			</div>
+			<div className="scroll__track" ref={(ref) => this.track = ref}>
+				<div className="scroll__slider" ref={(ref) => this.slider = ref} />
+			</div>
 		</div>
 	}
 }
