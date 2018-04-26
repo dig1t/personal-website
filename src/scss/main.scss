@@ -38,8 +38,6 @@ main {
 	.content {
 		background-color: $light-gray;
 		height: calc(100% - 70px);
-		overflow-x: hidden;
-		overflow-y: auto;
 		position: relative;
 		
 		> section:not(.hero) {
