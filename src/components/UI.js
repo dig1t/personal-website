@@ -109,8 +109,26 @@ class ScrollContainer extends React.Component {
 		this.state = props
 	}
 	
+	get height() {
+		return this.container.getBoundingClientRect().height
+	}
+	
+	get totalHeight() {
+		return this.content.getBoundingClientRect().height
+	}
+	
+	setPosition() {
+		window.abc = this.content
+		console.log(this.content, this.height, this.totalHeight)
+	}
+	
+	setHeight() {
+		this.slider.style.height = this.height / this.totalHeight * 100 + '%'
+	}
+	
 	handleScroll() {
 		console.log('scroll')
+		this.setPosition()
 	}
 	
 	handleReceive(e) {
@@ -121,6 +139,7 @@ class ScrollContainer extends React.Component {
 		console.log('mounting')
 		window.addEventListener('message', this.handleReceive, false)
 		//this.container.addEventListener('scroll', this.handleScroll.bind(this))
+		this.setHeight()
 	}
 	
 	componentWillUnmount() {
@@ -129,8 +148,8 @@ class ScrollContainer extends React.Component {
 	
 	render() {
 		return <div className={this.props.className} ref={(ref) => this.container = ref}>
-			<div className="scroll__view" onScroll={this.handleScroll.bind(this)} ref={(ref) => this.content = ref}>
-				<div className="scroll__content">
+			<div className="scroll__view" onScroll={this.handleScroll.bind(this)}>
+				<div className="scroll__content" ref={(ref) => this.content = ref}>
 					{ this.props.children }
 				</div>
 			</div>

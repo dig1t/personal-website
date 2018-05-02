@@ -15,10 +15,12 @@ module.exports = {
 		filename: ENV === 'production' ? 'bundle.min.js' : 'bundle.js'
 	},
   module: {
-    loaders: [
+  	rules: [
 			{
-				test: /.js$/,
-				loader: 'babel-loader',
+				test: /\.js$/,
+				use: [{
+					loader: 'babel-loader'
+				}],
 				exclude: /node_modules/
 			}
 		]
@@ -30,7 +32,8 @@ module.exports = {
 		new webpack.optimize.UglifyJsPlugin({
 			output: {
 				comments: false
-			}
+			},
+			sourceMap: true
 		})
 	] : []
 }

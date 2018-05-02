@@ -171,6 +171,7 @@ td, th {
 	}
 	
 	&__view {
+		width: calc(100% + #{$native-scrollbar-width});
 		overflow: scroll;
 		margin-right: -$native-scrollbar-width;
 	}
