@@ -1,5 +1,3 @@
-export const EVENT = 'EVENT'
-
 export const WINDOW_RESIZE = 'WINDOW_RESIZE'
 
 export const FILTER_UPDATE = 'FILTER_UPDATE'
