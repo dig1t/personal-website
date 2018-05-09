@@ -4,6 +4,9 @@ import Navigation from './Navigation'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
 
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+
 class Burger extends React.Component {
 	static propTypes = {
 		open: PropTypes.element.bool
@@ -106,7 +109,13 @@ Modal.propTypes = {
 class ScrollContainer extends React.Component {
 	constructor(props) {
 		super(props)
-		this.state = props
+		this.state = {
+			...props,
+			top: 0,
+			left: 0
+		}
+		
+		this.handleResize = this.handleResize.bind(this)
 	}
 	
 	get height() {
@@ -131,24 +140,23 @@ class ScrollContainer extends React.Component {
 		this.setPosition()
 	}
 	
-	handleReceive(e) {
-		console.log(e.data, e.func)
+	handleResize() {
+		console.log('resize')
 	}
 	
 	componentDidMount() {
 		console.log('mounting')
-		window.addEventListener('message', this.handleReceive, false)
-		//this.container.addEventListener('scroll', this.handleScroll.bind(this))
+		this.container.addEventListener('resize', this.handleResize)
 		this.setHeight()
 	}
 	
 	componentWillUnmount() {
-		//this.container.removeEventListener('scroll', this.handleScroll)
+		this.container.removeEventListener('resize', this.handleResize)
 	}
 	
 	render() {
 		return <div className={this.props.className} ref={(ref) => this.container = ref}>
-			<div className="scroll__view" onScroll={this.handleScroll.bind(this)}>
+			<div className="scroll__view" onScroll={this.handleScroll.bind(this)} onResize={this.handleResize.bind(this)}>
 				<div className="scroll__content" ref={(ref) => this.content = ref}>
 					{ this.props.children }
 				</div>

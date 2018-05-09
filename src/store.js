@@ -3,6 +3,8 @@ import thunk from 'redux-thunk'
 
 import reducers from './reducers'
 
+import { windowResize } from './actions/ui-events.js'
+
 const logger = store => next => action => {
 	console.group(action.type)
 	console.info('dispatching', action)
@@ -15,8 +17,18 @@ const logger = store => next => action => {
 	return result
 }
 
-export default initialState => createStore(
-	reducers,
-	initialState,
-	applyMiddleware(thunk, logger)
-)
+export const configureStore = initialState => {
+	const store = createStore(
+		reducers,
+		initialState,
+		applyMiddleware(thunk, logger)
+	)
+	
+	if (typeof window !== 'undefined') {
+		window.addEventListener('resize', () => {
+			store.dispatch(window.innerWidth, window.innerHeight)
+		})
+	}
+	
+	return store
+}

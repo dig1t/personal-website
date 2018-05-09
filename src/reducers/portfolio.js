@@ -1,7 +1,7 @@
 import { PORTFOLIO_MODAL_OPEN, PORTFOLIO_CLICK } from '../constants/actionTypes.js'
 import { FILTER_ALL, FILTER_WEB, FILTER_DESIGN } from '../constants/filters.js' // TEMP
 
-const reducer = (state={
+const reducer = (state = {
   data: [
     {
       name: 'A very long project title',

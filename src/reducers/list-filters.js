@@ -1,6 +1,6 @@
 import { FILTER_UPDATE } from '../constants/actionTypes.js'
 
-const reducer = (state={
+const reducer = (state = {
   filter: null, // default filter
   filterTarget: null, // current filter button
 	list: null

@@ -10,7 +10,7 @@ import config from './config.json'
 import Error from './src/components/Error'
 import Routes from './src/components/Routes'
 import Root from './src/components/Root'
-import configureStore from './src/store'
+import { configureStore } from './src/store'
 
 const app = express()
 
