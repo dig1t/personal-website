@@ -1,15 +1,15 @@
 import { WINDOW_RESIZE } from '../constants/actionTypes.js'
 
 const reducer = (state = {
-  width: typeof window !== 'undefined' ? window.innerWidth : null,
-  height: typeof window !== 'undefined' ? window.innerHeight : null
+  screenWidth: typeof window !== 'undefined' ? window.innerWidth : null,
+  screenHeight: typeof window !== 'undefined' ? window.innerHeight : null
 }, action) => {
 	switch(action.type) {
 		case WINDOW_RESIZE: {
 			return {
 				...state,
-				width: action.payload.width,
-        height: action.payload.height
+				screenWidth: action.payload.width,
+        screenHeight: action.payload.height
 			}
 		}
 	}

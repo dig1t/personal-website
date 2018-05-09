@@ -26,7 +26,7 @@ export const configureStore = initialState => {
 	
 	if (typeof window !== 'undefined') {
 		window.addEventListener('resize', () => {
-			store.dispatch(window.innerWidth, window.innerHeight)
+			store.dispatch(windowResize(window.innerWidth, window.innerHeight))
 		})
 	}
 	

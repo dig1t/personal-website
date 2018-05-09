@@ -106,7 +106,7 @@ Modal.propTypes = {
 // TODO: div_height / (div_total_height/div_height)
 // TODO: calc scrollbar track height
 
-class ScrollContainer extends React.Component {
+class Scroll extends React.Component {
 	constructor(props) {
 		super(props)
 		this.state = {
@@ -114,7 +114,8 @@ class ScrollContainer extends React.Component {
 			top: 0,
 			left: 0
 		}
-		
+		console.log(this.state.screenWidth)
+		console.log(this.state)
 		this.handleResize = this.handleResize.bind(this)
 	}
 	
@@ -141,7 +142,8 @@ class ScrollContainer extends React.Component {
 	}
 	
 	handleResize() {
-		console.log('resize')
+		console.log('resized')
+		console.log(this.state.uiEvents.screenWidth)
 	}
 	
 	componentDidMount() {
@@ -154,9 +156,15 @@ class ScrollContainer extends React.Component {
 		this.container.removeEventListener('resize', this.handleResize)
 	}
 	
+	componentDidUpdate(prevProps, prevState) {
+		if (prevState.uiEvents.screenWidth !== this.state.screenWidth ||
+			prevState.uiEvents.screenHeight !== this.state.screenHeight
+		) this.handleResize()
+	}
+	
 	render() {
 		return <div className={this.props.className} ref={(ref) => this.container = ref}>
-			<div className="scroll__view" onScroll={this.handleScroll.bind(this)} onResize={this.handleResize.bind(this)}>
+			<div className="scroll__view" onScroll={this.handleScroll.bind(this)}>
 				<div className="scroll__content" ref={(ref) => this.content = ref}>
 					{ this.props.children }
 				</div>
@@ -167,6 +175,13 @@ class ScrollContainer extends React.Component {
 		</div>
 	}
 }
+
+const ScrollContainer = connect(state => {
+	return {
+		screenWidth: state.uiEvents.screenWidth,
+		screenHeight: state.uiEvents.screenHeight,
+	}
+})(Scroll)
 
 export {
 	Burger,
