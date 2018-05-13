@@ -129,7 +129,7 @@ class Scroll extends React.Component {
 	
 	setPosition() {
 		window.abc = this.content
-		console.log(this.content, this.height, this.totalHeight)
+		//console.log(this.content, this.height, this.totalHeight)
 	}
 	
 	setHeight() {
@@ -137,7 +137,6 @@ class Scroll extends React.Component {
 	}
 	
 	handleScroll() {
-		console.log('scroll')
 		this.setPosition()
 	}
 	
