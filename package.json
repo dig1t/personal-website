@@ -1,69 +1,29 @@
 {
- "name": "personal-website",
- "version": "1.0.0",
- "description": "My personal website and professional portfolio",
- "main": "server.js",
- "scripts": {
-  "build": "webpack",
-  "dev": "concurrently \"webpack --progress --watch --mode=development\" \"babel-watch server.js\" \"grunt\"",
-  "start": "babel-watch server.js",
-  "test": "echo \"Error: no test specified\" && exit 1"
- },
- "repository": {
-  "type": "git",
-  "url": "https://github.com/dig1t/personal-website.git"
- },
- "author": "dig1t",
- "license": "ISC",
- "dependencies": {
-  "autoprefixer": "^8.3.0",
-  "axios": "^0.18.0",
-  "babel-cli": "^6.26.0",
-  "babel-core": "^6.26.0",
-  "babel-loader": "^7.1.4",
-  "babel-plugin-transform-decorators": "^6.24.1",
-  "babel-plugin-transform-decorators-legacy": "^1.3.4",
-  "babel-plugin-transform-object-rest-spread": "^6.26.0",
-  "babel-plugin-transform-react-jsx": "^6.24.1",
-  "babel-preset-env": "^1.6.1",
-  "babel-preset-react": "^6.24.1",
-  "babel-preset-stage-2": "^6.24.1",
-  "babel-watch": "^2.0.7",
-  "classnames": "^2.2.5",
-  "compression": "^1.7.2",
-  "ejs": "^2.5.9",
-  "express": "^4.16.3",
-  "grunt": "^1.0.2",
-  "grunt-contrib-clean": "^1.1.0",
-  "grunt-contrib-concat": "^1.0.1",
-  "grunt-contrib-cssmin": "^2.2.1",
-  "grunt-contrib-sass": "^1.0.0",
-  "grunt-contrib-uglify": "^3.3.0",
-  "grunt-contrib-watch": "^1.0.1",
-  "grunt-postcss": "^0.9.0",
-  "history": "^4.7.2",
-  "mocha": "^5.1.1",
-  "npm": "^6.0.0",
-  "prop-types": "^15.6.1",
-  "proptypes": "^1.1.0",
-  "react": "^16.3.2",
-  "react-dom": "^16.3.2",
-  "react-ga": "^2.5.0",
-  "react-redux": "^5.0.7",
-  "react-router": "^4.2.0",
-  "react-router-dom": "^4.2.2",
-  "react-transition-group": "^2.3.1",
-  "redux": "^4.0.0",
-  "redux-logger": "^3.0.6",
-  "redux-promise-middleware": "^5.1.1",
-  "redux-thunk": "^2.2.0",
-  "restify": "^7.1.1",
-  "simplebar": "^2.6.1",
-  "supertest": "^3.0.0",
-  "webpack": "^4.6.0",
-  "webpack-dev-server": "^3.1.3"
- },
- "devDependencies": {
-  "webpack-cli": "^2.0.15"
- }
+  "name": "personal-website",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "build": "next build",
+    "dev": "next dev -p 80",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dig1t/personal-website.git"
+  },
+  "author": "dig1t",
+  "license": "ISC",
+  "devDependencies": {
+    "axios": "^0.24.0",
+    "next": "^12.0.7",
+    "postcss-minify": "^1.1.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-redux": "^7.2.6",
+    "redux-thunk": "^2.4.1",
+    "sass": "^1.44.0"
+  }
 }

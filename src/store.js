@@ -1,16 +1,18 @@
+import { useMemo } from 'react'
 import { createStore, applyMiddleware } from 'redux'
 import thunk from 'redux-thunk'
 
 import reducers from './reducers'
 
-import { windowResize } from './actions/ui-events.js'
-
 const logger = store => next => action => {
+	if (typeof window === 'undefined') return next(action)
+	
 	console.group(action.type)
+	console.log('prev state', store.getState())
+	
+	const result = next(action)
+	
 	console.info('dispatching', action)
-	
-	let result = next(action)
-	
 	console.log('next state', store.getState())
 	console.groupEnd(action.type)
 	
@@ -18,17 +20,11 @@ const logger = store => next => action => {
 }
 
 export const configureStore = initialState => {
-	const store = createStore(
+	const store = useMemo(() => createStore(
 		reducers,
 		initialState,
 		applyMiddleware(thunk, logger)
-	)
-	
-	if (typeof window !== 'undefined') {
-		window.addEventListener('resize', () => {
-			store.dispatch(windowResize(window.innerWidth, window.innerHeight))
-		})
-	}
+	), [initialState])
 	
 	return store
 }
