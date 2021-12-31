@@ -1,13 +1,10 @@
 import { combineReducers } from 'redux'
 
-import uiEvents from './ui-events'
-import listFilters from './list-filters'
-import portfolio from './portfolio'
+import ui from './ui'
+import { fetchStatus, fetchErrors } from './fetchStatus'
 
-const allReducers = combineReducers({
-	uiEvents,
-	listFilters,
-	portfolio
+export default combineReducers({
+	ui,
+	fetchStatus,
+	fetchErrors
 })
-
-export default allReducers

@@ -1,10 +1,10 @@
 {
-	"name": "JavierM",
-	"short_name": "JavierM",
-	"description": "Javier M, Web Developer and Graphic Designer",
-	"start_url": "/",
+	"name": "Versa",
+	"short_name": "Versa",
+	"description": "network app",
+	"start_url": "/login",
 	"display": "standalone",
 	"orientation": "portrait",
-	"theme_color": "#e5bd17",
+	"theme_color": "#4e85fb",
 	"background_color": "#ffffff"
 }

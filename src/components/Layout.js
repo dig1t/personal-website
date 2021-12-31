@@ -1,12 +1,12 @@
-import React from 'react'
-import Navigation from './Navigation'
-import { ScrollContainer } from './UI'
+import Sidebar from './Sidebar'
 
-export default class Layout extends React.Component {
-	render() {
-		return <main>
-			<Navigation page={this.props.page} />
-			<ScrollContainer className="scroll-container content" page={this.props.page}>{this.props.children}</ScrollContainer>
-		</main>
-	}
+function Layout(props) {
+	return <main>
+		<Sidebar page={props.page} />
+		<div className={{
+			content: props.className
+		}}>{props.children}</div>
+	</main>
 }
+
+export default Layout

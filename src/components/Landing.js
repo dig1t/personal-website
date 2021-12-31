@@ -1,101 +1,28 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import Layout from './Layout'
-import Footer from './Footer'
+//import Image from 'next/image'
+import Link from 'next/link'
 
-const aboutMe = `Lorem ipsum dolor sit amet,
-consectetuer adipiscing elit, sed diam nonummy nibh euismod
-tincidunt ut laoreet dolore magna aliquam erat volutpat.
-Ut wisi enim ad minim veniam,`
-
-const featuredProjects = [
-	{
-		img: 'https://picsum.photos/700/500',
-		name: 'featured proj',
-		id: 3643
-	},
-	{
-		img: 'https://picsum.photos/500/500',
-		name: 'project',
-		id: 325643
-	},
-	{
-		img: 'https://picsum.photos/400/500',
-		name: 'featured project',
-		id: 3634643
-	}
-]
-
-export class Landing extends React.Component {
-	renderComponent() {
-		return <React.Fragment>
-			<div className="background" />
-			<div className="grid">
-				<div className="column" />
-				<div className="column" />
-				<div className="column" />
-				<div className="column" />
-				<div className="column" />
-				<div className="column" />
-				<div className="column" />
-			</div>
-			<section className="hero">
-				<div className="wrap">
-					<div className="stripe col-offset-8" />
-					<div className="row-ng align-wrap">
-						<div className="col-4-ng col-offset-2 name">
-							<div className="wrap">
-								<svg className="shape" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 440">
-									<polygon points="73.2,0.7 476.9,91.5 499.8,440.7 -0.2,402.4 " />
-								</svg>
-								<div className="page">01</div>
-								<h1>
-									<div>Javier</div>
-									<div>Mejia</div>
-								</h1>
-								<div className="title">
-									<div>Web Developer</div>
-									<div>UI Designer</div>
-								</div>
-							</div>
-						</div>
-						<div className="col-3-ng col-offset-3 nav-btn">
-							<Link to="/portfolio">View Portfolio</Link>
-						</div>
-					</div>
-				</div>
-			</section>
-			<section className="row-ng about">
-				<div className="col-10-ng col-offset-1 wrap">
-					<h1 className="heading--serif">About Me</h1>
-					<div className="number">
-						<span>02</span>
-					</div>
-					<p>{aboutMe}</p>
-				</div>
-			</section>
-			<section className="row-ng featured">
-				<div className="col-9-ng col-offset-1">
-					<h1 className="heading heading--serif">Portfolio</h1>
-				</div>
-				<div className="col col-2-ng number heading">03</div>
-				<div className="col-12-ng">
-					<div className="list">{featuredProjects.map(project => (
-						<div key={project.id} className="project">
-							<img src={project.img} />
-							<div className="name">{project.name}</div>
-						</div>
-					))}</div>
-				</div>
-				<div className="col-12-ng">
-					<Link to="/portfolio">View More</Link>
-				</div>
-			</section>
-			<Footer />
-		</React.Fragment>
+function Landing() {
+	const backgroundClass = {
+		'background-image': 'url(/i/landing/bkg.png)'
 	}
 	
-	render() {
-		return <Layout className="landing" page={this.props.location.pathname}>{this.renderComponent()}</Layout>
-	}
+	return <>
+		<div className="landing" style={backgroundClass}>
+			<div className="box align-wrap grid">
+				<div className = "gi-6">
+					asdsad
+				</div>
+				<div className="gi-4 grid-push-r-2">
+					<div>
+						<h2>app</h2>
+						<p>desc</p>
+						<Link href="/auth/signup">Sign Up</Link>
+						<Link href="/auth/login">Login</Link>
+					</div>
+				</div>
+			</div>
+		</div>
+	</>
 }
+
+export default Landing
