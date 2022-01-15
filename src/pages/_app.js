@@ -2,6 +2,9 @@ import { Provider } from 'react-redux'
 import Head from 'next/head'
 import { configureStore } from '../store'
 
+import Navigation from '../components/Navigation'
+import Footer from '../components/Footer'
+
 import '../styles/main.scss'
 
 function App({ Component, pageProps }) {
@@ -10,7 +13,7 @@ function App({ Component, pageProps }) {
 	return <>
 		<Provider store={store}>
 			<Head>
-				<title>dig1t</title>
+				<title>Javier M (@dig1t) - UX/UX</title>
 				<meta charSet="utf-8" />
 				<meta name="mobile-web-app-capable" content="yes" />
 				<meta name="viewport" content="width=device-width, minimum-scale=1.0" />
@@ -26,7 +29,9 @@ function App({ Component, pageProps }) {
 			</Head>
 			
 			<div id="app-root">
+				<Navigation></Navigation>
 				<Component { ...pageProps } />
+				<Footer></Footer>
 			</div>
 			<div id="modal-root" />
 		</Provider>
