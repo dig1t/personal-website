@@ -3,10 +3,10 @@
 // import page styles
 @import 'pages/landing';
 @import 'pages/auth';
+@import 'pages/card';
 
 ::selection {
-	color: $white;
-	background-color: transparentize($black, .4);
+	background-color: transparentize($red, 0);
 }
 
 body {
@@ -178,6 +178,7 @@ nav {
 	.box {
 		width: 100%;
 		height: $nav-height;
+		background-color: #fff;
 		border-bottom: 1px solid transparentize($light-gray, .8);
 		line-height: $nav-height;
 		position: relative;
@@ -203,7 +204,7 @@ nav {
 		
 		&.nav-btn {
 			a {
-				color: color('gray');
+				color: color(black);
 				padding: 8px 4px;
 				font-size: 1.4em;
 				font-weight: 700;
@@ -216,20 +217,7 @@ nav {
 			
 			&:hover:not(.active) a, &.active a {
 				color: color('black');
-				border-bottom: 2px solid $primary;
-			}
-		}
-		
-		.btn {
-			padding: 10px 20px;
-			font-size: 1.2em;
-			
-			&.btn-secondary {
-				border: 0;
-				
-				&:hover {
-					color: color('black');
-				}
+				border-bottom: 2px solid $red;
 			}
 		}
 		

@@ -1,14 +1,16 @@
 @each $tag, $font-size in $headers {
 	#{$tag} {
 		font-size: $font-size;
+		line-height: $font-size;
 	}
 	
 	.font-size-#{$tag} {
 		font-size: $font-size;
+		line-height: $font-size;
 	}
 }
 
-@for $borderRadius from 0 to 20 {
+@for $borderRadius from 0 through 20 {
 	.br-#{$borderRadius} {
 		border-radius: unquote("#{unquote('.')}#{$borderRadius}#{unquote('rem')}");
 	}
@@ -83,7 +85,14 @@
 	@include _size-variation(padding, 'p', $value);
 	
 	.font-size-#{$value} {
-		font-size: #{calc($value / 10)}rem;
+		$font-size: #{calc($value / 10)}rem;
+		
+		font-size: $font-size;
+		line-height: $font-size;
+	}
+	
+	.br-#{$value}p {
+		border-radius: #{$value}#{'%'};
 	}
 }
 

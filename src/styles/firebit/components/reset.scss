@@ -204,7 +204,7 @@ label {
 	
 	span {
 		display: block;
-		vertical-align: middle;
+		//vertical-align: middle;
 	}
 }
 
@@ -243,8 +243,8 @@ td, th {
 ::selection,
 ::-moz-selection,
 ::-webkit-selection {
-	background-color: #d4e2f7;
-	color: #2f2f2f;
+	background-color: transparentize(color(blue), .4);
+	color: #fff;
 }
 
 ::-webkit-scrollbar {

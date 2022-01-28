@@ -1,14 +1,21 @@
 import { Provider } from 'react-redux'
 import Head from 'next/head'
 import { configureStore } from '../store'
+import ReactGA from 'react-ga'
 
 import Navigation from '../components/Navigation'
 import Footer from '../components/Footer'
 
 import '../styles/main.scss'
 
+ReactGA.initialize('G-GLL93329SM')
+
 function App({ Component, pageProps }) {
 	const store = configureStore(pageProps.initialReduxState)
+	
+	if (typeof window !== 'undefined') {
+		ReactGA.pageview(window.location.pathname + window.location.search)
+	}
 	
 	return <>
 		<Provider store={store}>

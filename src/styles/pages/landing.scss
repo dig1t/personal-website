@@ -2,10 +2,6 @@
 //@import '../firebit/components/required';
 
 .landing {
-	i.img {
-		//padding-bottom: 100%; // 1:1 aspect ratio
-	}
-	
 	.grid-effect {
 		height: 100%;
 		position: fixed;
@@ -28,11 +24,12 @@
 			top: 8%;
 			
 			h1 {
-				margin-bottom: .6rem;
+				margin-bottom: 1.4rem;
 			}
 			
 			h5 {
-				letter-spacing: .2rem;
+				letter-spacing: .15rem;
+				font-weight: 600;
 			}
 			
 			> * {
@@ -121,15 +118,15 @@
 			position: relative;
 			z-index: -1;
 			
-			&:before {
+			/*&:before {
 				content: '';
 				width: 100%;
 				height: 100%;
 				position: absolute;
-				background-image: linear-gradient(rgba(0 0 0/10%) 1%, transparent 1%, transparent);
+				background-image: linear-gradient(rgba(0 0 0/10%) 20%, transparent 20%, transparent);
 				background-size: 1rem 2rem;
 				transform: scale(3) rotate(-40deg);
-			}
+			}*/
 			
 			.graphic {
 				height: calc(100% - 4.4rem);
@@ -160,9 +157,93 @@
 			}
 		}
 		
+		.list {
+			margin: 5rem 0;
+		}
+		
+		.project {
+			&:not(:last-child) {
+				margin-bottom: 4rem;
+			}
+			
+			.project-id {
+				color: color(orange);
+				font-weight: 200;
+				letter-spacing: -.1rem;
+			}
+			
+			.name a, .project-id {
+				font-size: map-get($headers, h4);
+				line-height: map-get($headers, h4);
+				
+				& > * {
+					position: absolute;
+				}
+			}
+			
+			.name a {
+				color: color(black, 900);
+				margin-bottom: .4rem;
+				font-weight: 900;
+				letter-spacing: -.04rem;
+				display: block;
+			}
+			
+			.project-medium > * {
+				font-weight: 200;
+				font-style: italic;
+			}
+			
+			.thumbnail {
+				margin-top: 2.4rem;
+				position: relative;
+				z-index: 1;
+				
+				&:before {
+					content: '';
+					background-color: color(red);
+					width: 100%;
+					height: 100%;
+					left: -.6rem;
+					bottom: -.6rem;
+					position: absolute;
+					z-index: -1;
+				}
+				
+				.img {
+					background-size: cover;
+					padding-bottom: calc(100% * 9 / 16);
+					display: block;
+				}
+				
+				.icon {
+					padding-top: 3rem;
+					padding-right: 3rem;
+					float: right;
+				}
+			}
+			
+			.nav-btn {
+				margin-top: 1.6rem;
+				text-align: center;
+				
+				i {
+					cursor: pointer;
+					padding: 1rem;
+				}
+			}
+		}
+		
 		@include breakpoint(phone-large, 'max-width') {
 			.header {
 				height: 14rem;
+			}
+			
+			.project {
+				.name a, .project-id {
+					font-size: map-get($headers, h5);
+					line-height: map-get($headers, h5);
+				}
 			}
 		}
 		
@@ -170,11 +251,90 @@
 			.header {
 				height: 18rem;
 			}
+			
+			.project {
+				.name a, .project-id {
+					font-size: map-get($headers, h3);
+					line-height: map-get($headers, h3);
+				}
+			}
 		}
 		
 		@include breakpoint(laptop, 'min-width') {
 			.header {
 				height: 24rem;
+			}
+			
+			.project {
+				.name a, .project-id {
+					font-size: map-get($headers, h2);
+					line-height: map-get($headers, h2);
+				}
+			}
+		}
+	}
+	
+	.socials {
+		height: 16rem;
+		margin-top: 2rem;
+		margin-bottom: 4rem;
+		
+		.links {
+			padding-top: 1rem;
+			display: flex;
+			flex-direction: column;
+			
+			& > *:not(:last-child) {
+				margin-bottom: 1rem;
+			}
+			
+			a {
+				color: inherit;
+				
+				&:hover {
+					color: color(orange, 400);
+				}
+			}
+		}
+		
+		.graphic {
+			position: absolute;
+			top: 2.5rem;
+			bottom: 0;
+			z-index: -1;
+			
+			i {
+				background-size: cover;
+			}
+		}
+		
+		@include breakpoint(tablet-large, 'min-width') {
+			& {
+				height: 20rem;
+			}
+			
+			.links {
+				padding-top: 2rem;
+			}
+		}
+		
+		@include breakpoint(laptop, 'min-width') {
+			& {
+				height: 28rem;
+			}
+			
+			.links {
+				padding-top: 3rem;
+			}
+		}
+		
+		@include breakpoint(phone-large, 'max-width') {
+			& {
+				height: 10rem;
+			}
+			
+			.graphic {
+				top: 2rem;
 			}
 		}
 	}

@@ -6,11 +6,11 @@ const swatch = color => {
 	const className500 = 'h-6 bg-' + color + '-500'
 	const className50 = shadeClass + 'bg-' + color + '-50'
 	
-	colors.push(<div className={className500}>
+	colors.push(<div className={className500} key={color + '-heading'}>
 			<h6 className="text-black-900 p-1">{color} <i className="float-r">50</i></h6>
 	</div>)
 	
-	colors.push(<div className={className50}>
+	colors.push(<div className={className50} key={color + '50'}>
 		<h6 className="text-black-900 p-1"><i className="float-r">50</i></h6>
 	</div>)
 	
@@ -18,7 +18,7 @@ const swatch = color => {
 		const shade = i * 100
 		const className = shadeClass + 'bg-' + color + '-' + shade
 		
-		colors.push(<div className={className}>
+		colors.push(<div className={className} key={color + shade}>
 			<h6 className="text-black-900 p-1"><i className="float-r">{shade}</i></h6>
 		</div>)
 	}
@@ -27,12 +27,12 @@ const swatch = color => {
 		const shade = i * 100
 		const className = shadeClass + 'bg-' + color + '-' + shade
 		
-		colors.push(<div className={className}>
+		colors.push(<div className={className} key={color + shade}>
 			<h6 className="text-white p-1"><i className="float-r">{shade}</i></h6>
 		</div>)
 	}
 	
-	return <div className="col-12 col-tablet-4 col-desktop-3">
+	return <div className="col-12 col-tablet-4 col-desktop-3" key={'swatch-' + color}>
 		<h3>{colors}</h3>
 	</div>
 }
