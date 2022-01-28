@@ -52,7 +52,7 @@ function Landing() {
 				</div>
 				
 				<div className="cta col-4 col-phone-8 offset-phone-2 offset-1 offset-phone-3 col-tablet-3 col-desktop-2 offset-desktop-2">
-					<button className="cta-btn">View Work</button>
+					<button className="cta-btn"><a href="#work">View Work</a></button>
 				</div>
 				
 				<div className="graphic col-7 col-phone-12 col-tablet-6 offset-tablet-1 offset-r-tablet-1 col-desktop-5 offset-desktop-1 offset-r-desktop-2 h-100p">
@@ -61,7 +61,7 @@ function Landing() {
 			</div>
 		</section>
 		
-		<section className="creations">
+		<section className="creations" id="work">
 			<div className="header grid">
 				<div className="graphic col-8 offset-4 col-desktop-9 offset-desktop-3">
 					<i className="box img" style={helixImg}></i>

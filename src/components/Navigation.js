@@ -22,7 +22,7 @@ function Navigation() {
 						<Link className="font-size-h6" href="/card">Card</Link>
 					</li>
 					<li className="nav-btn">
-						<Link className="font-size-h6" href="/resume.pdf">Resume</Link>
+						<Link className="font-size-h6" href="/Javier_Mejia_resume.pdf">Resume</Link>
 					</li>
 				</ul>
 			</div>
