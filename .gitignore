@@ -15,6 +15,7 @@ node_modules/
 # Cache
 .sass-cache/
 .next
+out
 
 # Compiled
 dist/*
