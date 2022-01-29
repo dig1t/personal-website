@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "private": true,
-  "main": "index.js",
+  "main": "out/index.html",
   "scripts": {
-    "build": "next build",
+    "build": "next build && next export",
     "dev": "next dev -p 80",
     "start": "next start -p 80",
     "lint": "next lint"
