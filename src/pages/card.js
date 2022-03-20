@@ -29,6 +29,7 @@ const Card = () => {
 					<div className="copy col-7">
 						<div className="heading">
 							<h4>@dig1t_</h4>
+							<h6 className="font-weight-300"><i>Roblox Developer</i></h6>
 							<h6 className="font-weight-300"><i>UI/UX Developer</i></h6>
 							<h6 className="font-weight-300"><i>Graphic Designer</i></h6>
 						</div>
