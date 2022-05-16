@@ -1,9 +1,9 @@
 @mixin breakpoint($point, $property: 'max-width') {
-  @if map-has-key($breakpoints, $point) {
-    $point: map-get($breakpoints, $point);
-  }
-  
-  @media (#{$property}: #{$point}) { @content; }
+	@if map-has-key($breakpoints, $point) {
+		$point: map-get($breakpoints, $point);
+	}
+	
+	@media (#{$property}: #{$point}) { @content; }
 }
 
 @mixin gradient($begin, $end, $deg: 0) {

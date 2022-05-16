@@ -45,7 +45,7 @@ function Landing() {
 		</div>
 		
 		<section className="hero">
-			<div className="align-wrap2 grid">
+			<div className="align-center-wrap2 grid">
 				<div className = "copy col-1 offset-1 col-phone-8 offset-phone-2 offset-desktop-2">
 					<h1>Javier Mejia</h1>
 					<h5>UI/UX Developer</h5>

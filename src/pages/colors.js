@@ -38,7 +38,7 @@ const swatch = color => {
 }
 
 const Colors = () => {
-	const swatches = ['black', 'light-gray', 'gray', 'dark-gray', 'white', 'red', 'orange', 'yellow', 'green', 'blue', 'purple'].map(
+	const swatches = ['black', 'light-gray', 'gray', 'blue-gray', 'dark-gray', 'white', 'red', 'orange', 'yellow', 'green', 'blue', 'purple', 'pink'].map(
 		color => swatch(color)
 	)
 	

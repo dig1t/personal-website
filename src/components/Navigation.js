@@ -12,7 +12,7 @@ function Navigation() {
 	}
 	
 	return <nav className="sticky">
-		<div className="box align-wrap grid">
+		<div className="box align-center-wrap grid">
 			<div className = "col-5 offset-1">
 				<Link href="/"><i className="logo bg-center bg-contain bg-no-repeat display-block" style={backgroundClass}></i></Link>
 			</div>

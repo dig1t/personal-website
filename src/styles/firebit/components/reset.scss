@@ -21,22 +21,22 @@ body {
 	-webkit-font-smoothing: antialiased;
 }
 
-section {
+section, footer {
 	position: relative;
 	overflow: hidden;
 }
 
 a, em, p, strong, u {
-	font-size: type-scale(0);
-	line-height: type-scale(0);
+	font-size: inherit;
+	line-height: inherit;
 }
 
 a {
-	color: #0062f9;
+	color: color(blue, 700);
 	text-decoration: none;
 	
 	&:hover {
-		text-decoration: none;
+		text-decoration: underline;
 	}
 }
 
@@ -72,11 +72,11 @@ textarea {
 
 input {
 	&.ok {
-		border-color: #55dc7d;
+		border-color: color(green);
 	}
 	
 	&.error {
-		border-color: #f75252;
+		border-color: color(red);
 	}
 	
 	&[type="submit"] {
@@ -105,7 +105,6 @@ input {
 		
 		&:before {
 			content: '';
-			background-image: img('spritesheet.svg');
 			background-color: inherit;
 			width: 18px;
 			height: 18px;

@@ -19,7 +19,7 @@ const Card = () => {
 	
 	const canShare = typeof navigator !== 'undefined' && navigator.share
 	
-	return <main className="card align-wrap">
+	return <main className="card align-center-wrap">
 		<div className="grid p-1">
 			<div className="card-container col-10 offset-1 col-phone-12 offset-phone-0 col-tablet-8 offset-tablet-2">
 				<div className="grid">
