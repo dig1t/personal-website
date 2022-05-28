@@ -42,6 +42,10 @@ const Colors = () => {
 		color => swatch(color)
 	)
 	
+	const neonSwatches = ['neon-red', 'neon-orange', 'neon-yellow', 'neon-green', 'neon-blue-green', 'neon-blue', 'neon-purple', 'neon-pink'].map(
+		color => swatch(color)
+	)
+	
 	return <main>
 		<div className="grid">
 			<div className="col-10 offset-1 offset-r-1 p-y-4">
@@ -49,6 +53,8 @@ const Colors = () => {
 				<h6 className="font-weight-normal p-x-1">My personal color palette used across all of my sites.</h6>
 			</div>
 			{swatches}
+			<div className="col-12" />
+			{neonSwatches}
 		</div>
 	</main>
 }

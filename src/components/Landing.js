@@ -4,23 +4,30 @@ const creations = [
 	{
 		name: 'Murder Escape',
 		client: 'firebit',
-		medium: 'Roblox',
+		medium: 'Roblox [2M+ PLAYS]',
 		thumbnail: '/i/projects/me-thumb.gif',
 		url: 'https://roblox.com/games/90267357'
 	},
 	{
 		name: 'Survival Islands',
 		client: 'firebit',
-		medium: 'Roblox',
+		medium: 'Roblox [20,000 PLAYS]',
 		thumbnail: '/i/projects/si-thumb.png',
 		url: 'https://roblox.com/games/4771858173'
 	},
 	{
 		name: 'Zombie Task Force',
 		client: 'ROWGNationStudios',
-		medium: 'Roblox',
+		medium: 'Roblox [5M+ PLAYS]',
 		thumbnail: '/i/projects/ztf-thumb.gif',
 		url: 'https://roblox.com/games/4693424588'
+	},
+	{
+		name: 'La Hora Machorra',
+		client: 'La Hora Machorra',
+		medium: 'Website',
+		thumbnail: '/i/projects/lhm-thumb.png',
+		url: 'http://lahoramachorra.com'
 	}
 ]
 
