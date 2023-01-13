@@ -1,5 +1,4 @@
 export default {
-	instagram: 'https://instagram.com/dig1t_',
-	//discord: 'https://discord.gg/shipfox',
+	instagram: 'https://instagram.com/dig1tt',
 	github: 'https://github.com/dig1t'
 }
