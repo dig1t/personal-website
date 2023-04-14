@@ -1,6 +1,6 @@
 import { Provider } from 'react-redux'
 import Head from 'next/head'
-import { configureStore } from '../store'
+import { useStore } from '../store'
 import ReactGA from 'react-ga'
 
 import Navigation from '../components/Navigation'
@@ -11,7 +11,7 @@ import '../styles/main.scss'
 ReactGA.initialize('G-GLL93329SM')
 
 function App({ Component, pageProps }) {
-	const store = configureStore(pageProps.initialReduxState)
+	const store = useStore(pageProps.initialReduxState)
 	
 	if (typeof window !== 'undefined') {
 		ReactGA.pageview(window.location.pathname + window.location.search)
@@ -21,6 +21,7 @@ function App({ Component, pageProps }) {
 		<Provider store={store}>
 			<Head>
 				<title>Javier M (@dig1t) - UX/UX</title>
+				<meta name="viewport" content="width=device-width, minimum-scale=1.0" />
 			</Head>
 			
 			<div id="app-root">

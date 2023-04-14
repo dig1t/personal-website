@@ -32,7 +32,7 @@ export const click = id => {
 			payload: {
 				// open modal if prev target id does not match
 				// if it matches then reverse the boolean value of modalOpen
-				open: getState().modalTargetId === id ? !getState().modalOpen : true,
+				//open: getState().modalTargetId === id ? !getState().modalOpen : true,
 				// set to the most recently clicked project id
 				id: id
 			}
