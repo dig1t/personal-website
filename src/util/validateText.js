@@ -9,8 +9,10 @@ const regexMap = new Map([
 	['us-phone', /^\+?[01]?[- ]?\(?\d{3}\)?[- ]?\d{3}[- ]?\d{4}$/]
 ])
 
-export default (text, validateFor) => {
+const validateText = (text, validateFor) => {
   const exp = regexMap.get(validateFor)
   
   return exp ? exp.test(text) : text
 }
+
+export default validateText

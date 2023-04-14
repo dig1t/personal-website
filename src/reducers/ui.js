@@ -2,7 +2,7 @@ import {
 	UI_GOOGLE_READY
 } from '../constants/actionTypes.js'
 
-export default (state = {
+const ui = (state = {
 	googleReady: false
 }, action) => {
 	switch(action.type) {
@@ -17,3 +17,5 @@ export default (state = {
 		}
 	}
 }
+
+export default ui

@@ -1,4 +1,3 @@
-import { useMemo } from 'react'
 import { createStore, applyMiddleware } from 'redux'
 import thunk from 'redux-thunk'
 
@@ -20,11 +19,11 @@ const logger = store => next => action => {
 }
 
 export const configureStore = initialState => {
-	const store = useMemo(() => createStore(
+	const store = () => createStore(
 		reducers,
 		initialState,
 		applyMiddleware(thunk, logger)
-	), [initialState])
+	)
 	
 	return store
 }
