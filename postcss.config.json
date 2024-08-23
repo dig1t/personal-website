@@ -1,5 +1,3 @@
 {
-	"plugins": [
-		"postcss-minify"
-	]
+  "plugins": ["postcss-minify"]
 }
