@@ -1,21 +1,18 @@
+import React from 'react';
 import { Provider } from 'react-redux';
 import Head from 'next/head';
 import { useStore } from '../store';
-import ReactGA from 'react-ga';
+import { Analytics } from "@vercel/analytics/react"
 
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 
 import '../styles/main.scss';
 
-ReactGA.initialize('G-GLL93329SM');
-
+// eslint-disable-next-line react/prop-types
 function App({ Component, pageProps }) {
+  // eslint-disable-next-line react/prop-types
   const store = useStore(pageProps.initialReduxState);
-
-  if (typeof window !== 'undefined') {
-    ReactGA.pageview(window.location.pathname + window.location.search);
-  }
 
   return (
     <>
@@ -32,6 +29,7 @@ function App({ Component, pageProps }) {
           <Navigation></Navigation>
           <Component {...pageProps} />
           <Footer></Footer>
+          <Analytics/>
         </div>
         <div id='modal-root' />
       </Provider>
