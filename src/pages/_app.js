@@ -21,7 +21,7 @@ function App({ Component, pageProps }) {
     <>
       <Provider store={store}>
         <Head>
-          <title>Javier M (@dig1t) - UX/UX</title>
+          <title>Javi @dig1t - Roblox Developer</title>
           <meta
             name='viewport'
             content='width=device-width, minimum-scale=1.0'

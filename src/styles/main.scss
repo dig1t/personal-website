@@ -169,6 +169,21 @@ nav {
     }
   }
 
+  // if not .sticky, make .placeholder the same height as the nav
+  &:not(.sticky) {
+    &::before {
+      content: '';
+      height: $nav-height;
+      display: block;
+    }
+
+    .box {
+      position: absolute;
+      top: 0;
+      z-index: 999999999;
+    }
+  }
+
   .logo {
     width: calc(205px / 2);
     height: calc(65px / 2);
@@ -220,6 +235,7 @@ nav {
       &.active a {
         color: color('black');
         border-bottom: 2px solid $red;
+        text-decoration: none;
       }
     }
 
