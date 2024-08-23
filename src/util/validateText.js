@@ -6,13 +6,13 @@ const regexMap = new Map([
   ['email', /.+\@.+\..+/],
   ['password', /^[a-zA-Z0-9 ~`!@#$%^&*()_+\-=[\]\\{}|;\':",.\/<>?]+$/],
   ['phone', /^\+?(?:\d ?)\d{6,14}$/],
-	['us-phone', /^\+?[01]?[- ]?\(?\d{3}\)?[- ]?\d{3}[- ]?\d{4}$/]
-])
+  ['us-phone', /^\+?[01]?[- ]?\(?\d{3}\)?[- ]?\d{3}[- ]?\d{4}$/],
+]);
 
 const validateText = (text, validateFor) => {
-  const exp = regexMap.get(validateFor)
-  
-  return exp ? exp.test(text) : text
-}
+  const exp = regexMap.get(validateFor);
 
-export default validateText
+  return exp ? exp.test(text) : text;
+};
+
+export default validateText;

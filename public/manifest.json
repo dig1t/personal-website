@@ -1,10 +1,10 @@
 {
-	"name": "Javier M.",
-	"short_name": "Javier M.",
-	"description": "UI/UX Developer",
-	"start_url": "/card",
-	"display": "standalone",
-	"orientation": "portrait",
-	"theme_color": "#e74c3c",
-	"background_color": "#ffffff"
+  "name": "Javi M.",
+  "short_name": "Javi M.",
+  "description": "Software Developer",
+  "start_url": "/card",
+  "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "#e74c3c",
+  "background_color": "#ffffff"
 }
