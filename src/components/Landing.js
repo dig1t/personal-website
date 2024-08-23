@@ -1,6 +1,6 @@
 import socials from '../constants/socials';
 
-const DEFAULT_PLATFORM_VISIT_TYPE = 'GAME PLAYS';
+const DEFAULT_PLATFORM_VISIT_TYPE = 'GAME PLAYS CONTRIBUTED';
 
 const clientLinks = {
   'Suit Up Games': 'https://suitup.games',
@@ -8,7 +8,7 @@ const clientLinks = {
   firebit: 'https://www.roblox.com/groups/5113589',
 };
 
-const creations = [
+const projects = [
   {
     name: "Blippi's Playground",
     client: 'Suit Up Games',
@@ -58,13 +58,6 @@ const creations = [
     thumbnail: '/i/projects/ztf-thumb.gif',
     url: 'https://roblox.com/games/4693424588',
   },
-  {
-    name: 'La Hora Machorra',
-    client: 'La Hora Machorra',
-    platform: 'Streaming Platform',
-    thumbnail: '/i/projects/lhm-thumb.png',
-    url: 'http://lahoramachorra.com',
-  },
 ];
 
 function formatNumber(num) {
@@ -111,14 +104,12 @@ function Landing() {
         <div className='align-center-wrap2 grid'>
           <div className='copy col-1 offset-1 col-phone-8 offset-phone-2 offset-desktop-2'>
             <h1>Javi Mejia</h1>
-            <h5>Roblox Developer</h5>
-            <h5>Software Developer</h5>
-            <h5>Designer</h5>
+            <h5>Roblox Game Developer</h5>
           </div>
 
           <div className='cta col-4 col-phone-8 offset-phone-2 offset-1 offset-phone-3 col-tablet-3 col-desktop-2 offset-desktop-2'>
             <button className='cta-btn'>
-              <a href='#work'>View Work</a>
+              <a href='#projects'>Jump to Projects</a>
             </button>
           </div>
 
@@ -128,7 +119,7 @@ function Landing() {
         </div>
       </section>
 
-      <section className='creations' id='work'>
+      <section className='projects' id='projects'>
         <div className='header grid'>
           <div className='graphic col-8 offset-4 col-desktop-9 offset-desktop-3'>
             <i className='box img' style={helixImg}></i>
@@ -136,11 +127,11 @@ function Landing() {
 
           <div className='heading col-10 offset-2'>
             <h1>Projects</h1>
-            <div>Projects I&apos;ve worked on</div>
+            <div>Discover the projects I&apos;ve worked on</div>
           </div>
         </div>
         <div className='list'>
-          {creations.map((creation, i) => {
+          {projects.map((creation, i) => {
             const thumbnail = {
               backgroundImage: `url(${creation.thumbnail})`,
             };
