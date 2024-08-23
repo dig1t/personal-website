@@ -1,24 +1,25 @@
+import React, { useEffect, useState } from 'react';
+
 import socials from '../constants/socials';
 
 const Card = () => {
-  const bkg = {
-    backgroundImage: 'url(/i/spiral-dimension-comp.jpg)',
-  };
-
   const avatar = {
     backgroundImage: 'url(/i/avatar.png)',
   };
 
   const handleShareClick = () => {
-    navigator
-      .share({
-        url: 'http://dig1t.io/card',
-      })
-      .then(() => console.log('shared'))
-      .catch((error) => console.log('err', error));
+    navigator.share({
+      url: 'http://dig1t.io/card',
+    });
   };
 
-  const canShare = typeof navigator !== 'undefined' && navigator.share;
+  const [canShare, setCanShare] = useState(false);
+
+  useEffect(() => {
+    setCanShare(
+      typeof navigator !== 'undefined' && typeof navigator.share === 'function',
+    );
+  }, []);
 
   return (
     <main className='card align-center-wrap'>
@@ -30,15 +31,12 @@ const Card = () => {
             </div>
             <div className='copy col-7'>
               <div className='heading'>
-                <h4>@dig1t_</h4>
+                <h4>@dig1tt</h4>
                 <h6 className='font-weight-300'>
                   <i>Roblox Developer</i>
                 </h6>
                 <h6 className='font-weight-300'>
-                  <i>UI/UX Developer</i>
-                </h6>
-                <h6 className='font-weight-300'>
-                  <i>Graphic Designer</i>
+                  <i>Software Developer</i>
                 </h6>
               </div>
               <div className='links'>
@@ -58,7 +56,7 @@ const Card = () => {
               {canShare && (
                 <i
                   className='fa fa-share fa-2x share'
-                  onClick={() => handleShareClick()}
+                  onClick={handleShareClick}
                 ></i>
               )}
             </div>

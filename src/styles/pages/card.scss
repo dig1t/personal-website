@@ -4,7 +4,7 @@
   background: fixed
       linear-gradient(
         transparentize(#fff, 1) 0%,
-        transparentize(color(black, 900), 0.7) 30%
+        transparentize(color(black, 900), 0.2) 70%
       ),
     url(/i/spiral-dimension-comp.jpg) center/cover;
   height: calc(100vh - $nav-height);
