@@ -14,5 +14,8 @@
   "prettier.trailingComma": "all",
   "prettier.printWidth": 80,
   "prettier.tabWidth": 2,
-  "prettier.useTabs": false
+  "prettier.useTabs": false,
+  "[scss]": {
+    "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
+  }
 }
