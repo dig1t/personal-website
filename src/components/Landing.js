@@ -136,7 +136,7 @@ function Landing() {
 
           <div className='heading col-10 offset-2'>
             <h1>Projects</h1>
-            <div>Projects I&apos;ve worked on and creations I&apos;ve made</div>
+            <div>Projects I&apos;ve worked on</div>
           </div>
         </div>
         <div className='list'>
