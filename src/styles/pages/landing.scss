@@ -390,6 +390,15 @@
       .graphic {
         top: 2rem;
       }
+
+      .links {
+        gap: .4rem;
+        flex-direction: row;
+
+        a {
+          font-size: 4em;
+        }
+      }
     }
   }
 
