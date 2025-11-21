@@ -1,19 +1,59 @@
 import socials from '../constants/socials';
 
-const DEFAULT_PLATFORM_VISIT_TYPE = 'GAME PLAYS CONTRIBUTED';
+const DEFAULT_PLATFORM_VISIT_TYPE = 'PLAYS';
 
 const clientLinks = {
   'Suit Up Games': 'https://suitup.games',
-  'Looking Fresh Games': 'https://lookingfresh.games',
+  'LFG Studio': 'https://lookingfresh.games',
   firebit: 'https://www.roblox.com/groups/5113589',
 };
 
 const projects = [
   {
+    name: 'Farm Craze',
+    client: 'firebit',
+    platform: 'Roblox Original Experience',
+    platformVisits: 21900,
+    thumbnail: '/i/projects/farm-craze.jpeg',
+    url: 'https://www.roblox.com/games/103322005781641',
+  },
+  {
+    name: 'Sweet Dreams',
+    client: 'LFG Studio',
+    platform: 'Roblox Branded Experience',
+    platformVisits: 10000000,
+    thumbnail: '/i/projects/sweet-dreams.webp',
+    url: 'https://www.roblox.com/games/130666358646922',
+  },
+  {
+    name: 'Noobz',
+    client: 'LFG Studio',
+    platform: 'Roblox Branded Experience',
+    platformVisits: 227400,
+    thumbnail: '/i/projects/noobz.webp',
+    url: 'https://www.roblox.com/games/140359775209161',
+  },
+  {
+    name: 'Sparkles Roleplay',
+    client: 'LFG Studio',
+    platform: 'Roblox Branded Experience',
+    platformVisits: 640000,
+    thumbnail: '/i/projects/sparkles-rp.webp',
+    url: 'https://www.roblox.com/games/102923711466727',
+  },
+  {
+    name: 'Sparkles Magical Market',
+    client: 'LFG Studio',
+    platform: 'Roblox Branded Experience',
+    platformVisits: 3600000,
+    youtubeId: '-ZJWipOXjyg',
+    url: 'https://www.roblox.com/games/16559299291',
+  },
+  {
     name: "Blippi's Playground",
     client: 'Suit Up Games',
     platform: 'Roblox Branded Experience',
-    platformVisits: 8000000,
+    platformVisits: 23600000,
     youtubeId: 'Co8SmlCUb5w',
     url: 'https://www.roblox.com/games/14834598561',
   },
@@ -26,13 +66,12 @@ const projects = [
     url: 'https://www.roblox.com/games/14357600982',
   },
   {
-    name: 'Sparkles Magical Market',
-    client: 'Looking Fresh Games',
-    platform: 'Roblox Branded Experience',
+    name: 'Survival Islands',
+    client: 'firebit',
+    platform: 'Roblox Original Experience',
     platformVisits: 20000,
-    // thumbnail: '/i/projects/sparkles.jpeg',
-    youtubeId: 'VBsmVjKf_Vc',
-    url: 'https://www.roblox.com/games/15287717538',
+    thumbnail: '/i/projects/si-thumb.png',
+    url: 'https://roblox.com/games/4771858173',
   },
   {
     name: 'Murder Escape',
@@ -41,14 +80,6 @@ const projects = [
     platformVisits: 2000000,
     thumbnail: '/i/projects/me-thumb.gif',
     url: 'https://roblox.com/games/90267357',
-  },
-  {
-    name: 'Survival Islands',
-    client: 'firebit',
-    platform: 'Roblox Original Experience',
-    platformVisits: 20000,
-    thumbnail: '/i/projects/si-thumb.png',
-    url: 'https://roblox.com/games/4771858173',
   },
   {
     name: 'Zombie Task Force',
