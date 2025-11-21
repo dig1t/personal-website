@@ -161,15 +161,18 @@ function Landing() {
             <div>Discover the projects I&apos;ve worked on</div>
           </div>
         </div>
-        <div className='list'>
+        <div className='list grid tablet-p-4'>
           {projects.map((creation, i) => {
             const thumbnail = {
               backgroundImage: `url(${creation.thumbnail})`,
             };
 
             return (
-              <div className='project grid' key={creation.name}>
-                <div className='project-id col-1 offset-2 col-phone-2 offset-phone-1'>
+              <div
+                className='project col-12 col-tablet-6 p-x-2'
+                key={creation.name}
+              >
+                <div className='project-id col-1 phone-offset-2 offset-2 col-phone-2 offset-phone-1'>
                   <div>{'0' + (i + 1)}</div>
                 </div>
                 <div className='name col-7 offset-r-2 col-phone-8 offset-phone-0 offset-r-phone-1'>
@@ -181,7 +184,7 @@ function Landing() {
                     {creation.name}
                   </a>
                 </div>
-                <div className='project-info col-7 offset-3 offset-r-2 col-phone-8 offset-phone-3 offset-r-phone-1'>
+                <div className='project-info'>
                   <h5 className='client'>
                     {' '}
                     {clientLinks[creation.client] ? (
@@ -208,7 +211,7 @@ function Landing() {
                     )}
                   </div>
                 </div>
-                <div className='thumbnail col-8 offset-2 col-phone-10 offset-phone-1 col-laptop-6'>
+                <div className='thumbnail col-8 offset-1 col-phone-10 offset-phone-1 col-laptop-6'>
                   {creation.youtubeId && (
                     <div className='video'>
                       <iframe
@@ -226,7 +229,7 @@ function Landing() {
                     <i className='img' style={thumbnail}></i>
                   )}
                 </div>
-                {/*<div className="nav-btn col-1 offset-9">
+                {/*<div className="nav-btn">
                   <a href={creation.url} target="_blank" rel="noopener noreferrer">
                     <i className="fas fa-chevron-right fa-3x"></i>
                   </a>
