@@ -1,19 +1,59 @@
 import socials from '../constants/socials';
 
-const DEFAULT_PLATFORM_VISIT_TYPE = 'GAME PLAYS CONTRIBUTED';
+const DEFAULT_PLATFORM_VISIT_TYPE = 'PLAYS';
 
 const clientLinks = {
   'Suit Up Games': 'https://suitup.games',
-  'Looking Fresh Games': 'https://lookingfresh.games',
+  'LFG Studio': 'https://lookingfresh.games',
   firebit: 'https://www.roblox.com/groups/5113589',
 };
 
 const projects = [
   {
+    name: 'Farm Craze',
+    client: 'firebit',
+    platform: 'Roblox Original Experience',
+    platformVisits: 21900,
+    thumbnail: '/i/projects/farm-craze.jpeg',
+    url: 'https://www.roblox.com/games/103322005781641',
+  },
+  {
+    name: 'Sweet Dreams',
+    client: 'LFG Studio',
+    platform: 'Roblox Branded Experience',
+    platformVisits: 10000000,
+    thumbnail: '/i/projects/sweet-dreams.webp',
+    url: 'https://www.roblox.com/games/130666358646922',
+  },
+  {
+    name: 'Noobz',
+    client: 'LFG Studio',
+    platform: 'Roblox Branded Experience',
+    platformVisits: 227400,
+    thumbnail: '/i/projects/noobz.webp',
+    url: 'https://www.roblox.com/games/140359775209161',
+  },
+  {
+    name: 'Sparkles Roleplay',
+    client: 'LFG Studio',
+    platform: 'Roblox Branded Experience',
+    platformVisits: 640000,
+    thumbnail: '/i/projects/sparkles-rp.webp',
+    url: 'https://www.roblox.com/games/102923711466727',
+  },
+  {
+    name: 'Sparkles Magical Market',
+    client: 'LFG Studio',
+    platform: 'Roblox Branded Experience',
+    platformVisits: 3600000,
+    youtubeId: '-ZJWipOXjyg',
+    url: 'https://www.roblox.com/games/16559299291',
+  },
+  {
     name: "Blippi's Playground",
     client: 'Suit Up Games',
     platform: 'Roblox Branded Experience',
-    platformVisits: 8000000,
+    platformVisits: 23600000,
     youtubeId: 'Co8SmlCUb5w',
     url: 'https://www.roblox.com/games/14834598561',
   },
@@ -26,13 +66,12 @@ const projects = [
     url: 'https://www.roblox.com/games/14357600982',
   },
   {
-    name: 'Sparkles Magical Market',
-    client: 'Looking Fresh Games',
-    platform: 'Roblox Branded Experience',
+    name: 'Survival Islands',
+    client: 'firebit',
+    platform: 'Roblox Original Experience',
     platformVisits: 20000,
-    // thumbnail: '/i/projects/sparkles.jpeg',
-    youtubeId: 'VBsmVjKf_Vc',
-    url: 'https://www.roblox.com/games/15287717538',
+    thumbnail: '/i/projects/si-thumb.png',
+    url: 'https://roblox.com/games/4771858173',
   },
   {
     name: 'Murder Escape',
@@ -41,14 +80,6 @@ const projects = [
     platformVisits: 2000000,
     thumbnail: '/i/projects/me-thumb.gif',
     url: 'https://roblox.com/games/90267357',
-  },
-  {
-    name: 'Survival Islands',
-    client: 'firebit',
-    platform: 'Roblox Original Experience',
-    platformVisits: 20000,
-    thumbnail: '/i/projects/si-thumb.png',
-    url: 'https://roblox.com/games/4771858173',
   },
   {
     name: 'Zombie Task Force',
@@ -130,15 +161,18 @@ function Landing() {
             <div>Discover the projects I&apos;ve worked on</div>
           </div>
         </div>
-        <div className='list'>
+        <div className='list grid tablet-p-4'>
           {projects.map((creation, i) => {
             const thumbnail = {
               backgroundImage: `url(${creation.thumbnail})`,
             };
 
             return (
-              <div className='project grid' key={creation.name}>
-                <div className='project-id col-1 offset-2 col-phone-2 offset-phone-1'>
+              <div
+                className='project col-12 col-tablet-6 p-x-2'
+                key={creation.name}
+              >
+                <div className='project-id col-1 phone-offset-2 offset-2 col-phone-2 offset-phone-1'>
                   <div>{'0' + (i + 1)}</div>
                 </div>
                 <div className='name col-7 offset-r-2 col-phone-8 offset-phone-0 offset-r-phone-1'>
@@ -150,7 +184,7 @@ function Landing() {
                     {creation.name}
                   </a>
                 </div>
-                <div className='project-info col-7 offset-3 offset-r-2 col-phone-8 offset-phone-3 offset-r-phone-1'>
+                <div className='project-info'>
                   <h5 className='client'>
                     {' '}
                     {clientLinks[creation.client] ? (
@@ -177,7 +211,7 @@ function Landing() {
                     )}
                   </div>
                 </div>
-                <div className='thumbnail col-8 offset-2 col-phone-10 offset-phone-1 col-laptop-6'>
+                <div className='thumbnail col-8 offset-1 col-phone-10 offset-phone-1 col-laptop-6'>
                   {creation.youtubeId && (
                     <div className='video'>
                       <iframe
@@ -195,7 +229,7 @@ function Landing() {
                     <i className='img' style={thumbnail}></i>
                   )}
                 </div>
-                {/*<div className="nav-btn col-1 offset-9">
+                {/*<div className="nav-btn">
                   <a href={creation.url} target="_blank" rel="noopener noreferrer">
                     <i className="fas fa-chevron-right fa-3x"></i>
                   </a>
