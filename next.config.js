@@ -5,7 +5,6 @@ module.exports = {
   swcMinify: true,
   optimizeFonts: false,
   sassOptions: {
-    fiber: false,
     includePaths: [path.join(__dirname, 'styles')],
   },
 };
